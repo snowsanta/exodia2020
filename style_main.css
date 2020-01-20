@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.canvas_layer{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.canv{
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.content{
+    top: 1080px;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(0,0,0,0);
+}
+
+.new{
+    z-index: 10;
+    background-color: red;
+}
+
+#content_back{
+    z-index: -200;
+    margin: 0;
+    padding: 0;
+    height: 500%;
+    width: 100%;
+    overflow: hidden;
+}
