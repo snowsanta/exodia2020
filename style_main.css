@@ -3,6 +3,10 @@ body{
     padding: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .canvas_layer{
     margin: 0;
     padding: 0;

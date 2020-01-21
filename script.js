@@ -12,6 +12,7 @@ function drawimg(image, context, x, y, w = 0, h = 0){
     context.drawImage(image, x, y, window.innerWidth, window.innerHeight);
 }
 
+
 var beach_back = new Image();
 beach_back.src = './renders/beach_back.jpg';
 var sand = new Image();
@@ -219,6 +220,7 @@ animation_sun.update();
 
 
 // layer3
+
 
 
 
