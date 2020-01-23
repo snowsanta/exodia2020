@@ -72,13 +72,13 @@ var Animation_forage = function(){
 }
 
 // Define update loop on the "Animation" prototype
+var flg = 1;
+
+
 Animation_forage.prototype.update = function() {
-
-    var run__anim = 1;
-    var flg = 1;
-    var flg3 = 1;
-     
-
+    
+    
+    
     ctx2.clearRect(0, 0, canv2.width, canv2.height);
     ctx3.clearRect(0, 0, canv3.width, canv3.height);
 
@@ -102,29 +102,21 @@ Animation_forage.prototype.update = function() {
     this.forage_l.y -= (this.forage_l.speed * animationDeltaTime) * window.innerHeight / 2;
     this.forage_l.fac += this.forage_l.speed * animationDeltaTime;
 
+
+    console.log(this.forage_d.fac);
     //schedule and make constraint
     if(this.forage_d.fac >= 1.2 && flg){
         flg = 0;
-        run__anim = 0;
+        return;
     };
-    
-    if(this.forage_d.fac > 2 && !flg && flg3){
-        run__anim = 0;
-        flg3 = 0;
+        
+    if((this.forage_d.fac <= 1.2 || this.forage_d.fac > 2) && !flg){
         this.forage_d.speed = this.forage_d.speed * -1;
         this.forage_l.speed = this.forage_l.speed * -1;
-    };
-    
-    if(this.forage_d.fac <= 1.2 && !flg && !flg3){
-        run__anim = 0;
-        flg3 = 1;
-        this.forage_d.speed = this.forage_d.speed * -1;
-        this.forage_l.speed = this.forage_l.speed * -1;
+        return;
     };
 
-    if(run__anim){
-        window.requestAnimationFrame(this.boundUpdate);
-    }
+    window.requestAnimationFrame(this.boundUpdate);
 }
 
 
