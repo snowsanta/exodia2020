@@ -1,5 +1,6 @@
 var back_cols = ["rgb(150,206,180)","rgb(255,238,173)"]
 var height = window.innerHeight;
+var width = window.innerWidth;
 
 
 
@@ -55,6 +56,8 @@ var lem = new Image();
 lem.src = "./renders/lemonade_sill.png";
 var crowd = new Image();
 crowd.src = "./renders/crowd.png";
+var ball = new Image(300,300);
+ball.src = "./renders/ball.png";
 
 //layer1
 
@@ -96,6 +99,8 @@ var ctx_back_props = canv_back_props.getContext('2d');
 
 drawimg(beach_back, ctx, 0, -150);
 drawimg(sand, ctx, 0, 90);
+drawimg(forage_li , ctx2, 0,50);
+drawimg(forage , ctx3, 0,0);
 
 ctx_back.fillStyle = back_cols[0];
 ctx_back.fillRect(0,0,window.innerWidth,window.innerHeight);
@@ -245,45 +250,45 @@ window.requestAnimationFrame(this.boundUpdate);
 // ----------------------------------------------------
 
 // Create animation instance and call first update
-var animation_forage = new Animation_forage();
-animation_forage.update();
+// var animation_forage = new Animation_forage();
+// animation_forage.update();
 
-var lastScrollTop = 0;
-window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-   if (st > lastScrollTop){
-    animation_forage.update();
-   } else {
-    animation_forage.update();
-   }
-   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-}, false);
+// var lastScrollTop = 0;
+// window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+//    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+//    if (st > lastScrollTop){
+//     animation_forage.update();
+//    } else {
+//     animation_forage.update();
+//    }
+//    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+// }, false);
 
 
 var animation_sun = new Animation_sun();
 animation_sun.update();
-
-// drawimg(forage, ctx2, -100, -100, 1.2, 1.2);
 
 
 // content layer animations
 
 
 //woofer
+
+//main
 ctx_back_props.beginPath();
 ctx_back_props.fillStyle = 'rgba(255,255,255,.5)';
 ctx_back_props.roundedRect(-300, height / 2 - 300 - 15, 700 + 15, 200, 15);
 ctx_back_props.fill();
 ctx_back_props.closePath();
 
-
+//handle
 ctx_back_props.beginPath();
 ctx_back_props.fillStyle = back_cols[0] ;
 ctx_back_props.roundedRect(-300, height / 2 - 300 + 15, 700 - 15, 200, 15);
 ctx_back_props.fill();
 ctx_back_props.closePath();
 
-
+//handle empty
 ctx_back_props.beginPath();
 ctx_back_props.clearRect(-300, height / 2 - 200, 800, 400, 50);
 ctx_back_props.fillStyle = 'rgba(255,255,255,.5)';
@@ -295,20 +300,19 @@ ctx_back_props.closePath();
 ctx_back_props.clearRect(-50,height / 2 - 130,700,50);
 ctx_back_props.fillStyle = back_cols[0];
 ctx_back_props.beginPath();
-ctx_back_props.arc(330, height / 2 + 60, 75, 0, 2 * Math.PI);
-ctx_back_props.closePath();
-ctx_back_props.fill();
-ctx_back_props.beginPath();
 ctx_back_props.arc(430, height / 2 - 160, 25, 0, 2 * Math.PI);
 ctx_back_props.closePath();
 ctx_back_props.fill();
 ctx_back_props.clearRect(0,height / 2 + 15,150,100)
-// ctx_back_props.beginPath();
-// ctx_back_props = "red";
-// ctx_back_props.arc(500,height / 2 - 130 , 100, 0, 2 * Math.PI);
-// ctx_back_props.fill();
-// ctx_back_props.closePath();
 
+ctx_back_props.fillStyle = 'rgba(255,255,255,.5)';
+ctx_back_props.beginPath();
+ctx_back_props.arc(300,height / 2 - 105 , 10, 0, 2 * Math.PI);
+ctx_back_props.arc(350,height / 2 - 105 , 10, 0, 2 * Math.PI);
+ctx_back_props.arc(200,height / 2 - 105 , 10, 0, 2 * Math.PI);
+ctx_back_props.arc(250,height / 2 - 105 , 10, 0, 2 * Math.PI);
+ctx_back_props.closePath();
+ctx_back_props.fill();
 
 
 
@@ -316,73 +320,118 @@ ctx_back_props.clearRect(0,height / 2 + 15,150,100)
 drawimg(lem, ctx_back_props, 0, height);
 
 //stage
-drawimg(crowd, ctx_back_props, 0, height*2);
+// drawimg(crowd, ctx_back_props, 0, height*2);
+
+// var light = ctx.createRadialGradient(layer.x,layer.y,layer.in_rad,layer.x,layer.y,layer.out_rad);
+// grd.addColorStop(0, layer.col + "1)");
+// grd.addColorStop(.1, layer.col + ".5)");
+// grd.addColorStop(1, layer.col + "0)");
+// ctx_back_props.fillStyle = light;
+
+//ball
+//drawimg(ball, ctx_back_props, 0, height*3,height/(2 * width),1/2);
 
 
-// var Animation_cont_layer = function(){
-//     // Explicitly bind update()'s 'this' context and cache in instance property
-//     this.boundUpdate = this.update.bind(this);
 
-//     this.forage_d = {img : forage, x: 0, y: 0, fac: 1, speed : .7};
-//     this.forage_l = {img : forage_li, x: 0, y: 50, fac: 1, speed : 1.5};
+var Animation_cont_layer = function(){
+    // Explicitly bind update()'s 'this' context and cache in instance property
+    this.boundUpdate = this.update.bind(this);
 
-//     // Track frame time
-//     this.lastAnimationTime = 0;
-// }
+    this.ballobj = {img : ball, x: 100, y: height*3.2, speed : 0, accn : 3000};
+    this.woof = {rad : 75, attack_speed : 60, reck_speed : -700, sp : 100};
+    this.lights = [{x:width * .2, start: 5, speed: 1.5, left: 5.5, right: 4.5}, {x:width * .8, start: 4, speed: -1.5, left: 4.5 , right: 3.5}];
 
-// // Define update loop on the "Animation" prototype
-// var run__anim = 1;
-// var flg = 1;
-// var flg3 = 1;
-// Animation_cont_layer.prototype.update = function() {
+    // Track frame time
+    this.lastAnimationTime = 0;
+}
 
-     
+// Define update loop on the "Animation" prototype
+Animation_cont_layer.prototype.update = function() {
 
-//     ctx2.clearRect(0, 0, canv2.width, canv2.height);
-//     ctx3.clearRect(0, 0, canv3.width, canv3.height);
+    ctx_anim.clearRect(0, 0, canv_anim.width, canv_anim.height);
 
-//     // Calculate time since last frame
-//     var currentAnimationTime = Date.now();
-//     var animationDeltaTime   = (currentAnimationTime - (this.lastAnimationTime || Date.now())) / 3000;
+    // Calculate time since last frame
+    var currentAnimationTime = Date.now();
+    var animationDeltaTime   = (currentAnimationTime - (this.lastAnimationTime || Date.now())) / 3000;
 
-//     // Reset time for next frame
-//     this.lastAnimationTime = currentAnimationTime;
+    // Reset time for next frame
+    this.lastAnimationTime = currentAnimationTime;
 
-//     // Draw
-//     drawimg(this.forage_d.img , ctx2, this.forage_d.x, this.forage_d.y, this.forage_d.fac, this.forage_d.fac);
-//     drawimg(this.forage_l.img , ctx3, this.forage_l.x, this.forage_l.y, this.forage_l.fac, this.forage_l.fac);
+    // Draw
 
-//     // Update props
-//     this.forage_d.x -= (this.forage_d.speed * animationDeltaTime) * window.innerWidth / 2;
-//     this.forage_d.y -= (this.forage_d.speed * animationDeltaTime) * window.innerHeight / 2;
-//     this.forage_d.fac += this.forage_d.speed * animationDeltaTime;
+    //ball
+    drawimg(this.ballobj.img, ctx_anim, this.ballobj.x, this.ballobj.y,height/(2 * width),1/2);
 
-//     this.forage_l.x -= (this.forage_l.speed * animationDeltaTime) * window.innerWidth / 2;
-//     this.forage_l.y -= (this.forage_l.speed * animationDeltaTime) * window.innerHeight / 2;
-//     this.forage_l.fac += this.forage_l.speed * animationDeltaTime;
+    //woofer
+    ctx_anim.fillStyle = back_cols[0];
+    ctx_anim.beginPath();
+    ctx_anim.arc(330, height / 2 + 60, this.woof.rad, 0, 2 * Math.PI);
+    ctx_anim.closePath();
+    ctx_anim.fill();
+    ctx_anim.fillStyle = 'rgba(255,255,255,.5)';
+    ctx_anim.beginPath();
+    ctx_anim.arc(330, height / 2 + 60, 15, 0, 2 * Math.PI);
+    ctx_anim.closePath();
+    ctx_anim.fill();
 
-//     //schedule and make constraint
-
-//     //for first stop
-//     if(this.forage_d.fac > 1.2 && flg){
-//         flg = 0;
-//         console.log(flg);
-//         return;
-//     }
+    //stage
     
-//     //for stop when goes out
-//     else if((this.forage_d.fac > 2 || this.forage_d.fac < 1.2) && (!flg)){
-//         console.log(this.forage_d.fac);
+    this.lights.forEach((light) => {
+        var light_grad = ctx.createRadialGradient(light.x, height * 2.9,100,light.x, height * 2.9,650);
+        light_grad.addColorStop(0, "rgba(255,255,255,.4)");
+        light_grad.addColorStop(.4, "rgba(255,255,255,.1)");
+        light_grad.addColorStop(1, "rgba(255,255,255,0)");
+        ctx_anim.fillStyle = light_grad;
+        ctx_anim.beginPath();
+        ctx_anim.arc(light.x, height * 2.9, 650, light.start, light.start + .3);
+        ctx_anim.lineTo(light.x, height * 2.9);
+        ctx.closePath();
+        ctx_anim.fill();
 
-//         this.forage_d.speed = this.forage_d.speed * -1;
-//         this.forage_l.speed = this.forage_l.speed * -1;
-//         return;
-//     }
-
-//     else{
-//         window.requestAnimationFrame(this.boundUpdate);
-//     };
-// }
+    })
+    
+    ctx_anim.globalAlpha = .5;
+    drawimg(crowd, ctx_anim, 0, height*2);
+    ctx_anim.globalAlpha = 1;
+    
 
 
+    // Update props
+
+    //ball
+    this.ballobj.y += (this.ballobj.speed * animationDeltaTime);
+    this.ballobj.speed += (this.ballobj.accn * animationDeltaTime);
+    if(this.ballobj.y > height * 3.45){
+        this.ballobj.speed = this.ballobj.speed * -1;
+    }
+    if(this.ballobj.y < height * 3.2){
+        this.ballobj.speed = 0;
+        this.ballobj.y = height * 3.2;
+    }
+
+    //woofer
+    this.woof.rad += this.woof.sp * animationDeltaTime;
+    if(this.woof.rad >= 80){
+        this.woof.sp = this.woof.reck_speed;
+    }
+    if(this.woof.rad <= 70){
+        this.woof.sp = this.woof.attack_speed;
+    }
+
+    //lights
+    this.lights.forEach((light) => {
+        light.start += light.speed * animationDeltaTime;
+        if(light.start > light.left || light.start < light.right){
+            light.speed = light.speed * -1;
+            light.start = (Math.abs(light.start - light.left) > Math.abs(light.start - light.right)) ? light.right : light.left;
+        }
+    });
+
+    //schedule and make constraint
+
+    window.requestAnimationFrame(this.boundUpdate);
+}
+
+var animation_cont_layer = new Animation_cont_layer();
+animation_cont_layer.update();
 
