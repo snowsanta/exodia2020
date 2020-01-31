@@ -1,46 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style_main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <title>Exodia - This time for tropical</title>
 </head>
+
 <body>
     <div class="canv" id="can_div">
         <canvas class="canvas_layer" id="canv" style="position: absolute; left: 0; top: 0; z-index: 0;">
             Your browser dont support thi shit dawg
         </canvas>
         <canvas class="canvas_layer" id="canv4" style="position: absolute; left: 0; top: 0; z-index: 1;">
-                Your browser dont support thi shit dawg
-        </canvas>
-        <canvas class="canvas_layer" id="canv2" style="position: absolute; left: 0; top: 0; z-index: 9999;">
             Your browser dont support thi shit dawg
         </canvas>
-        <canvas class="canvas_layer" id="canv3" style="position: absolute; left: 0; top: 0; z-index: 9999;">
+        <canvas class="canvas_layer" id="canv2" style="position: absolute; left: 0; top: 0; z-index: 6;">
             Your browser dont support thi shit dawg
         </canvas>
-        <canvas class="canvas_layer" id="loader_can" style="position: absolute; left: 0; top: 0; z-index: 102;">
+        <canvas class="canvas_layer" id="canv3" style="position: absolute; left: 0; top: 0; z-index: 6;">
+            Your browser dont support thi shit dawg
+        </canvas>
+        <canvas class="canvas_layer" id="loader_can" style="position: absolute; left: 0; top: 0; z-index: 2;">
             Your browser dont support thi shit dawg
         </canvas>
     </div>
     <div class="content">
-        <canvas class="content_canv" id="content_back" style="position: absolute; left: 0; top: 0; z-index: 1000;">
+        <canvas class="content_canv" id="content_back" style="position: absolute; left: 0; top: 0; z-index: 3;">
             Your browser dont support thi shit dawg
         </canvas>
-        <canvas class="content_canv" id="content_back_prop" style="position: absolute; left: 0; top: 0; z-index: 1001;">
+        <canvas class="content_canv" id="content_back_prop" style="position: absolute; left: 0; top: 0; z-index: 4;">
             Your browser dont support thi shit dawg
         </canvas>
-        <canvas class="content_canv" id="content_anim" style="position: absolute; left: 0; top: 0; z-index: 1002;">
+        <canvas class="content_canv" id="content_anim" style="position: absolute; left: 0; top: 0; z-index: 5;">
             Your browser dont support thi shit dawg
         </canvas>
         <div class="new">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque aliquid
-                fugiat facere quas quo commodi consequatur, quod consequuntur amet obcaecati.
-                Vel in blanditiis adipisci laborum, dolores impedit magnam. Rerum, at?</p>
+            <div class="about container">
+                <img src="renders/mountain.png" style="position: absolute;right: 0;" alt="">
+                <div class="text-center">
+                    <h1>About us</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4 ">
+                        <p class="about-text">
+                            The biggest and the most magnificent technical and cultural fest of the Himalayas, a
+                            complete feast for its participants and sponsors alike, Exodia, is back with its 9th
+                            edition, to thrill the youth with its invigorating cultural extravaganza and brain-storming
+                            technical fiesta. 
+                        </p>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="events container">
+                <img src="renders/dance.png" style="position: absolute;right: 0;z-index: 10;" alt="">
+                <div class="text-center">
+                    <h1>events</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="renders/drone.png">
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4 align-middle">
+                        <h3>
+                            technical
+                        </h3>
+                        <h5>
+                            Bring Out The Techie In You
+                        </h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item yellow">Drone Challenge</li>
+                            <li class="list-group-item yellow">RoboWars</li>
+                            <li class="list-group-item yellow">RoboSoccer</li>
+                            <li class="list-group-item yellow">Dementia</li>
+                            <li class="list-group-item yellow"><a href="events.html"> View More</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="renders/eminem.png" style="position: absolute; left: 0;top: 1400px;" alt="">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4 align-middle">
+                        <h3>
+                            Cultural
+                        </h3>
+                        <h5>
+                            Let's Show 'em
+                        </h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item yellow">Band Slam</li>
+                            <li class="list-group-item yellow">Canvas Painting</li>
+                            <li class="list-group-item yellow">Couture</li>
+                            <li class="list-group-item yellow">Rap Battle</li>
+                            <li class="list-group-item yellow"><a href="events.html"> View More</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">
+                        <img src="renders/band.png">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="sponsors container">
+                <div class="text-center">
+                    <h1>sponsors</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-0.5"></div>
+                    <div class="col-sm-3 ">
+                        <div class="wrapper">
+                            <div class="card" style="text-align:center;">
+                                <img src="brands/aasiyana decor.jpg" class="enclosed">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-0.5"></div>
+                    <div class="col-sm-3 ">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="brands/catalyst.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/ClearTrail.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/cortex solutions.jpg" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/Daily Dose Cafe.png" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/ENTUPLE.png" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/feeniks.png" alt="Third̥ slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/HBR Ascend.png" alt="Third slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-0.5"></div>
+                    <div class="col-sm-3 ">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="brands/internshalalogo.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/made easy.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/NBCC.jpeg" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/obtuze solution.jpg" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/orane international.png" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/paras udyog.jpg" alt="Third̥ slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/PNB.png" alt="Third slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-0.5"></div>
+                    <div class="col-sm-3 ">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="brands/R Sons.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/research aid.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/SBI.png" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/sjvn.png" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/stage.jpg" alt="Third slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="brands/swag satrangi.jpeg" alt="Third̥ slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block" src="brands/The Plenum School.png" alt="Third slide">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="team container">
+                <img src="renders/lights.png" class="black" style="position: absolute;width: 30%; top: 2880px;right: 0;" alt="">
+                <img src="renders/lights.png" class="black" style="position: absolute;width: 20%; top: 2880px;left: 0;transform: rotateY(180deg);" alt="">
+                <div class="text-center">
+                    <h1>team</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 ">
+                        <p class="about-text" style="padding: 3%;">
+                            Team is what makes us stronger. Presenting the team who realised the event.
+                        </p>
+                    </div>
+                </div>
+                <div class="row w-100">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/vaibhav.jpg" class="team-member" alt="">
+                        <h4 class="text-center">Vaibhav Mongia</h4>
+                        <h3 class="text-center">Convenor</h3>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/dipanshu.jpg" class="team-member" alt="">
+                        <h4 class="text-center">Dipanshu</h4>
+                        <h3 class="text-center">Web-Dev</h3>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/ali.jpg" class="team-member" alt="">
+                        <h4 class="text-center">Ali</h4>
+                        <h3 class="text-center">publicity</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 ">
+                        <p class="about-text text-center" style="padding: 3%;">
+                            <a href="team.html" class="text-center">View Them all</a>
+                        </p>
+                    </div>
+                </div>
+                <img src="" alt="">
+            </div>
+            <footer class="footer container">
+                <img src="renders/forage_dark.png" style="position:absolute; left:0;bottom: 70px;" alt="">
+                <div class="text-center">
+                    <h1>Exodia</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="renders/logo.png" alt="">
+                    </div>
+                    <div class="col-sm-5 ">
+                        <p class="about-text">
+                            The biggest and the most magnificent technical and cultural fest of the Himalayas, a complete feast for its participants and sponsors alike, Exodia, is back with its 9th edition, to thrill the youth with its invigorating cultural extravaganza and brain-storming technical fiesta.
+                        </p>
+                        <h4 class="text-center">Welcome to iit mandi</h4>
+                        <h4 class="text-center">Welcome to Exodia 2020</h4>
+                    </div>
+                    <div class="col-sm-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item green">
+                                <img src="renders/phone.png" alt="">
+                                Contact us</li>
+                            <li class="list-group-item green">
+                                <img src="renders/mail.png" alt="">
+                                publicity@exodia.in
+                            </li>
+                            <li class="list-group-item green">
+                                <img src="renders/address.png" alt="">
+                                IIT MANDI.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
