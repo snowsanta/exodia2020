@@ -215,3 +215,31 @@ img {
 .card img {
     width: 70%;
 }
+
+navigation img{
+    position: absolute;
+    top: -10vh;
+    z-index: 11;
+    opacity: 0.8;
+    width: 200px;
+}
+
+navigation img:hover {
+    transition: ease 0.2s;
+    top: -8vh;
+}
+
+navigation h4 {
+    position: absolute;
+    z-index: 12;
+    top: 7vh;
+    color: black;
+}
+
+navigation h4:hover {
+    transition: ease 0.5s;
+    position: absolute;
+    z-index: 12;
+    top: 7vh;
+    color: white;
+}
