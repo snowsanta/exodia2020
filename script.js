@@ -2,7 +2,10 @@ var back_cols = ["rgb(150,206,180)","rgb(255,238,173)"]
 var height = window.innerHeight;
 var width = window.innerWidth;
 
-
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    preloader.classList.add('finish')
+})
 
 function drawimg(image, context, x, y, w = 0, h = 0){
     if(!image.complete){
