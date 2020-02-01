@@ -165,7 +165,7 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 30px;
+    padding: 0;
     color: #000;
     text-transform: uppercase;
     font-size: 60px;
@@ -184,7 +184,7 @@ img {
 }
 
 .wrapper:before {
-    --bw: 9px;
+    --bw: 2px;
     grid-area: 1 / 1;
     content: '';
     backface-visibility: hidden;
@@ -193,7 +193,7 @@ img {
     margin-top: calc(-1 * var(--bw));
     margin-left: calc(-1 * var(--bw));
     background: transparent;
-    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+    transform: translateX(-10px) rotateY(-30deg) rotateX(15deg) scale(1.03);
     pointer-events: none;
     border: var(--bw) solid #000;
     box-sizing: content-box;
@@ -221,7 +221,7 @@ navigation img{
     top: -10vh;
     z-index: 11;
     opacity: 0.8;
-    width: 200px;
+    width: 10%;
 }
 
 navigation img:hover {
