@@ -2,10 +2,7 @@ var back_cols = ["rgb(150,206,180)","rgb(255,238,173)"]
 var height = window.innerHeight;
 var width = window.innerWidth;
 
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.classList.add('finish')
-})
+
 
 function drawimg(image, context, x, y, w = 0, h = 0){
     if(!image.complete){
@@ -47,10 +44,6 @@ CanvasRenderingContext2D.prototype.roundedRect = function (x, y, width, height, 
     this.restore();
 }
 
-var beach_back = new Image();
-beach_back.src = './renders/beach_back.jpg';
-var sand = new Image();
-sand.src = './renders/sand.png';
 var forage_li = new Image();
 forage_li.src = './renders/forage_light.png';
 var forage = new Image();
@@ -59,8 +52,20 @@ var lem = new Image();
 lem.src = "./renders/lemonade_sill.png";
 var crowd = new Image();
 crowd.src = "./renders/crowd.png";
-var ball = new Image(300,300);
+var ball = new Image();
 ball.src = "./renders/ball.png";
+var seat = new Image();
+seat.src = "./renders/seat.png";
+var umbrella = new Image();
+umbrella.src = "./renders/umbrella.png";
+var table = new Image();
+table.src = "./renders/table.png";
+var logo = new Image();
+logo.src = "./renders/exodia_logo.png";
+var bar = new Image();
+bar.src = "./renders/bar.png";
+var pole = new Image();
+pole.src = "./renders/pole.png";
 
 //layer1
 
@@ -100,10 +105,37 @@ canv_back_props.width = canv_back_props.scrollWidth;
 var ctx_back_props = canv_back_props.getContext('2d');
 
 
-drawimg(beach_back, ctx, 0, -150);
-drawimg(sand, ctx, 0, 90);
+var back = ctx.createLinearGradient(0,0,0,height*.8);
+back.addColorStop(0,"#0773e0");
+back.addColorStop(.1,"#0b86f0");
+back.addColorStop(.4495,"#7ab5d5");
+back.addColorStop(.46,"#1e84c0");
+back.addColorStop(.52,"#00a9ca");
+back.addColorStop(.62,"#79e4e3");
+back.addColorStop(.65,"#98eae6");
+back.addColorStop(.8,"#e9ede0");
+back.addColorStop(1,"#ffecd1");
+ctx.fillStyle = back;
+ctx.fillRect(0,0,width,height);
 drawimg(forage_li , ctx2, 0,50);
 drawimg(forage , ctx3, 0,0);
+// drawimg(seat , ctx, width * .7,height*.5,140/width,180/height);
+// drawimg(umbrella , ctx, width * .7,height*.25,280/width,400/height);
+// drawimg(table , ctx, width * .65,height*.65,70/width,90/height);
+drawimg(logo , ctx, width * .38,height*.05,400/width,290/height);
+drawimg(bar , ctx, width * .75,height*.55,400/width,290/height);
+drawimg(pole , ctx, width * .097,height*.65,10/width,190/height);
+drawimg(pole , ctx, width * .247,height*.65,10/width,190/height);
+drawimg(pole , ctx, width * .397,height*.65,10/width,190/height);
+
+
+ctx.beginPath();
+ctx.moveTo(-width * .15,height*.655);
+ctx.quadraticCurveTo(-width * .025,height * .8, width * .1,height*.655);
+ctx.quadraticCurveTo(width * .175,height * .8, width * .25,height*.655);
+ctx.quadraticCurveTo(width * .325,height * .8, width * .4,height*.655);
+ctx.stroke();
+ctx.closePath();
 
 ctx_back.fillStyle = back_cols[0];
 ctx_back.fillRect(0,0,window.innerWidth,window.innerHeight);
@@ -188,8 +220,8 @@ var Animation_sun = function(){
     // Explicitly bind update()'s 'this' context and cache in instance property
     this.boundUpdate = this.update.bind(this);
 // change value and color to match graphic
-    this.sun = [
-        {in_rad: 50, out_rad: 200, time:0, x: window.innerWidth * 7/10, y: window.innerHeight / 7, col: "rgba(243,230,178,"},
+    this.sun = {in_rad: 50, out_rad: 200, time:0, x: window.innerWidth * 7/10, y: window.innerHeight / 7, col: "rgba(243,230,178,"};
+    this.bulbs = [
         {in_rad: 1, out_rad: 10, time:0, x: window.innerWidth / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
         {in_rad: 1, out_rad: 10, time:.16, x: window.innerWidth * 1.1 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
         {in_rad: 1, out_rad: 10, time:.32, x: window.innerWidth * 1.2 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
@@ -216,31 +248,27 @@ this.lastAnimationTime = currentAnimationTime;
 
 // Draw
 
-this.sun.forEach((layer) => {
-    var grd = ctx.createRadialGradient(layer.x,layer.y,layer.in_rad,layer.x,layer.y,layer.out_rad);
-    grd.addColorStop(0, layer.col + "1)");
-    grd.addColorStop(.1, layer.col + ".5)");
-    grd.addColorStop(1, layer.col + "0)");
+    var grd = ctx.createRadialGradient(this.sun.x,this.sun.y,this.sun.in_rad,this.sun.x,this.sun.y,this.sun.out_rad);
+    grd.addColorStop(0, this.sun.col + "1)");
+    grd.addColorStop(.1, this.sun.col + ".5)");
+    grd.addColorStop(1, this.sun.col + "0)");
     
     
     ctx4.fillStyle = grd;
     ctx4.beginPath();
-    ctx4.arc(layer.x, layer.y, 500, 0, 2 * Math.PI);
+    ctx4.arc(this.sun.x, this.sun.y, 500, 0, 2 * Math.PI);
     ctx4.fill();
     ctx4.closePath();
     // Update props
-    if(layer.in_rad > 10 ){
-        //sun
-        layer.in_rad = 40 - (2 * Math.sin(layer.time/.5));
-        layer.out_rad = 200 - (20 * Math.sin(layer.time/.5));
-        layer.time += animationDeltaTime;
-    }
-    else{
-        //rice_bulbs
-        layer.out_rad = 7 - (3 * Math.sin(layer.time/.09));
-        layer.time += animationDeltaTime;
-    }
-})
+    //sun
+        this.sun.in_rad = 40 - (2 * Math.sin(this.sun.time/.5));
+        this.sun.out_rad = 200 - (20 * Math.sin(this.sun.time/.5));
+        this.sun.time += animationDeltaTime;
+
+    //     //rice_bulbs
+    // var 
+    // layer.out_rad = 7 - (3 * Math.sin(layer.time/.09));
+    // layer.time += animationDeltaTime;
 
 //schedule and make constraint
 
@@ -317,6 +345,12 @@ ctx_back_props.arc(250,height / 2 - 105 , 10, 0, 2 * Math.PI);
 ctx_back_props.closePath();
 ctx_back_props.fill();
 
+ctx_back_props.fillStyle = 'rgba(255,255,255,.5)';
+ctx_back_props.beginPath();
+ctx_back_props.arc(width * .8,height * 2.9 , 13, 0, 2 * Math.PI);
+ctx_back_props.arc(width * .2,height * 2.9 , 13, 0, 2 * Math.PI);
+ctx_back_props.closePath();
+ctx_back_props.fill();
 
 
 //lemonade
@@ -363,7 +397,9 @@ Animation_cont_layer.prototype.update = function() {
     // Draw
 
     //ball
+    ctx_anim.globalAlpha = .6;
     drawimg(this.ballobj.img, ctx_anim, this.ballobj.x, this.ballobj.y,height/(2 * width),1/2);
+    ctx_anim.globalAlpha = 1;
 
     //woofer
     ctx_anim.fillStyle = back_cols[0];
@@ -390,7 +426,6 @@ Animation_cont_layer.prototype.update = function() {
         ctx_anim.lineTo(light.x, height * 2.9);
         ctx.closePath();
         ctx_anim.fill();
-
     })
     
     ctx_anim.globalAlpha = .5;
@@ -416,9 +451,11 @@ Animation_cont_layer.prototype.update = function() {
     this.woof.rad += this.woof.sp * animationDeltaTime;
     if(this.woof.rad >= 80){
         this.woof.sp = this.woof.reck_speed;
+        this.woof.rad = 79;
     }
     if(this.woof.rad <= 70){
         this.woof.sp = this.woof.attack_speed;
+        this.woof.rad = 71;
     }
 
     //lights
