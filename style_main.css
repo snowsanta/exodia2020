@@ -218,11 +218,11 @@ img {
 }
 
 navigation img{
-    position: absolute;
+    position: fixed;
     top: -10vh;
     z-index: 11;
-    opacity: 0.8;
     width: 10%;
+    animation: sign ease 1s infinite alternate;
 }
 
 navigation img:hover {
@@ -243,4 +243,13 @@ navigation h4:hover {
     z-index: 12;
     top: 7vh;
     color: white;
+}
+
+@keyframes sign {
+    from {
+        transform: rotateZ(3deg);
+    }
+    to {
+        transform: rotateZ(-3deg);
+    }
 }
