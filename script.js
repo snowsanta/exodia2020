@@ -187,6 +187,7 @@ var bulb_obj = function(time, col, x, y) {
     this.col = col;
 }
 
+var index = 0;
 var Animation_sun = function(){
     // Explicitly bind update()'s 'this' context and cache in instance property
     this.boundUpdate = this.update.bind(this);
@@ -204,14 +205,15 @@ var Animation_sun = function(){
     ctx.quadraticCurveTo(width * .325,height * .8, width * .4,height*.655);
     
     var key = 0;
+
     ctx4.fillStyle = "red";
-    for (i = 0; i < width * .4; i += 10){
+    for (i = 0; i < width * .4; i += 12){
         for(j = height*.755; j> height * .655; j-- ){
             if(ctx.isPointInPath(i,j)){
                 key ++;
-                this.bulbs.push(new bulb_obj(i,cols[0], i,j));
-                this.bulbs.push(new bulb_obj(i,cols[key%6], i,j - 50));
-                this.bulbs.push(new bulb_obj(i,cols[key%3], i,j + 50));
+                this.bulbs.push(new bulb_obj(i,cols[index], i,j));
+                //this.bulbs.push(new bulb_obj(i,cols[key%6], i,j - 50));
+                //this.bulbs.push(new bulb_obj(i,cols[key%3], i,j + 50));
                 break;
             }
         }
@@ -291,7 +293,6 @@ window.requestAnimationFrame(this.boundUpdate);
 //    }
 //    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 // }, false);
-
 
 var animation_sun = new Animation_sun();
 animation_sun.update();
