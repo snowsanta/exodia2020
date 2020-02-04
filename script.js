@@ -176,25 +176,47 @@ ctx_back.fillRect(0,window.innerHeight * 5,window.innerWidth,window.innerHeight)
 // layer2
 
 
+var cols = ["rgba(255,0,0,", "rgba(0,255,0,", "rgba(0,0,255,","rgba(255,255,0,", "rgba(0,255,255,", "rgba(255,0,255,"]
 
-
+var bulb_obj = function(time, col, x, y) {
+    this.in_rad = 1;
+    this.out_rad = 10;
+    this.time = time;
+    this.x = x;
+    this.y = y;
+    this.col = col;
+}
 
 var Animation_sun = function(){
     // Explicitly bind update()'s 'this' context and cache in instance property
     this.boundUpdate = this.update.bind(this);
-// change value and color to match graphic
-    this.sun = {in_rad: 50, out_rad: 200, time:0, x: window.innerWidth * 7/10, y: window.innerHeight / 7, col: "rgba(243,230,178,"};
-    this.bulbs = [
-        {in_rad: 1, out_rad: 10, time:0, x: window.innerWidth / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-        {in_rad: 1, out_rad: 10, time:.16, x: window.innerWidth * 1.1 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-        {in_rad: 1, out_rad: 10, time:.32, x: window.innerWidth * 1.2 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-        {in_rad: 1, out_rad: 10, time:.77, x: window.innerWidth * 1.3 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-        {in_rad: 1, out_rad: 10, time:2, x: window.innerWidth * 1.4 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-        {in_rad: 1, out_rad: 10, time:0, x: window.innerWidth * 1.5 / 10, y: window.innerHeight * 7/10, col: "rgba(255,0,0,"},
-    ];
 
+    // change value and color to match graphic
+    this.sun = {in_rad: 50, out_rad: 200, time:0, x: window.innerWidth * 7/10, y: window.innerHeight / 7, col: "rgba(243,230,178,"};
+    this.bulbs = [];
     // Track frame time
     this.lastAnimationTime = 0;
+
+    ctx.beginPath();
+    ctx.moveTo(-width * .15,height*.655);
+    ctx.quadraticCurveTo(-width * .025,height * .8, width * .1,height*.655);
+    ctx.quadraticCurveTo(width * .175,height * .8, width * .25,height*.655);
+    ctx.quadraticCurveTo(width * .325,height * .8, width * .4,height*.655);
+    
+    var key = 0;
+    ctx4.fillStyle = "red";
+    for (i = 0; i < width * .4; i += 10){
+        for(j = height*.755; j> height * .655; j-- ){
+            if(ctx.isPointInPath(i,j)){
+                key ++;
+                this.bulbs.push(new bulb_obj(i,cols[0], i,j));
+                this.bulbs.push(new bulb_obj(i,cols[key%6], i,j - 50));
+                this.bulbs.push(new bulb_obj(i,cols[key%3], i,j + 50));
+                break;
+            }
+        }
+    }
+    ctx.closePath();
 }
 
 // Define update loop on the "Animation" prototype
@@ -224,14 +246,26 @@ this.lastAnimationTime = currentAnimationTime;
     ctx4.closePath();
     // Update props
     //sun
-        this.sun.in_rad = 40 - (2 * Math.sin(this.sun.time/.5));
-        this.sun.out_rad = 200 - (20 * Math.sin(this.sun.time/.5));
-        this.sun.time += animationDeltaTime;
+    this.sun.in_rad = 40 - (2 * Math.sin(this.sun.time/.5));
+    this.sun.out_rad = 200 - (20 * Math.sin(this.sun.time/.5));
+    this.sun.time += animationDeltaTime;
 
-    //     //rice_bulbs
-    // var 
-    // layer.out_rad = 7 - (3 * Math.sin(layer.time/.09));
-    // layer.time += animationDeltaTime;
+    //rice_bulbs
+    this.bulbs.forEach((bulb) => {
+        var grd = ctx.createRadialGradient(bulb.x,bulb.y,bulb.in_rad,bulb.x,bulb.y,bulb.out_rad);
+        grd.addColorStop(0, bulb.col + "1)");
+        grd.addColorStop(.1, bulb.col + ".5)");
+        grd.addColorStop(1, bulb.col + "0)");
+        
+        
+        ctx4.fillStyle = grd;
+        ctx4.beginPath();
+        ctx4.arc(bulb.x, bulb.y, 500, 0, 2 * Math.PI);
+        ctx4.fill();
+        ctx4.closePath();
+        bulb.out_rad = 7 - (3 * Math.sin(bulb.time/.09));
+        bulb.time += animationDeltaTime;
+    });
 
 //schedule and make constraint
 
