@@ -1,24 +1,39 @@
 var back_cols = ["rgb(150,206,180)","rgb(255,238,173)"]
-var height = window.innerHeight;
-var width = window.innerWidth;
 
-window.addEventListener('load', () => {
-    const preloader = document.querySelector('.preloader');
-    preloader.classList.add('finish')
+Array.from(document.getElementsByClassName("container")).forEach((div) => {
+    div.style.height = window.innerHeight + "px";
 })
 
-function drawimg(image, context, x, y, w = 0, h = 0){
+var load_flg = 0;
+window.addEventListener('load', function(event){
+    if(screen.availWidth - window.innerWidth){
+        document.getElementById("max-note").style.opacity = "1";
+        load_flg = 1;
+    };
+    document.getElementById("preloader").classList.add("finish")
+})
+
+window.addEventListener('resize', function(event){
+    if((load_flg) && !(screen.availWidth - window.innerWidth)){
+        location.reload();
+    }
+    if(screen.availWidth - window.innerWidth){
+        document.getElementById("max-note").style.opacity = "1";
+    }else{
+        document.getElementById("max-note").style.opacity = "0";
+    };
+})
+
+function drawimg(image, context, x, y, w = 1, h = 1, op = 1){
     if(!image.complete){
         setTimeout(function(){
-            drawimg(image, context, x, y, w, h);
+            drawimg(image, context, x, y, w, h, op);
         },50);
         return;
     }
-    if(h && w){
-        context.drawImage(image, x, y, window.innerWidth * w, window.innerHeight * h);
-        return;
-    }
-    context.drawImage(image, x, y, window.innerWidth, window.innerHeight);
+    context.globalAlpha = op;
+    context.drawImage(image, x, y, window.innerWidth * w, window.innerHeight * h);
+    context.globalAlpha = 1;
 }
 
 CanvasRenderingContext2D.prototype.roundedRect = function (x, y, width, height, radius){
@@ -28,21 +43,21 @@ CanvasRenderingContext2D.prototype.roundedRect = function (x, y, width, height, 
     // Save the existing state of the canvas so that it can be restored later
     this.save();
     
-        // Translate to the given X/Y coordinates
-        this.translate(x, y);
-
-        // Move to the center of the top horizontal line
-        this.moveTo(width / 2,0);
-        
-        // Draw the rounded corners. The connecting lines in between them are drawn automatically
-        this.arcTo(width,0,width,height, Math.min(height / 2, radius));
-        this.arcTo(width, height, 0, height, Math.min(width / 2, radius));
-        this.arcTo(0, height, 0, 0, Math.min(height / 2, radius));
-        this.arcTo(0, 0, radius, 0, Math.min(width / 2, radius));
-
-        // Draw a line back to the start coordinates
-        this.lineTo(width / 2,0);
-
+    // Translate to the given X/Y coordinates
+    this.translate(x, y);
+    
+    // Move to the center of the top horizontal line
+    this.moveTo(width / 2,0);
+    
+    // Draw the rounded corners. The connecting lines in between them are drawn automatically
+    this.arcTo(width,0,width,height, Math.min(height / 2, radius));
+    this.arcTo(width, height, 0, height, Math.min(width / 2, radius));
+    this.arcTo(0, height, 0, 0, Math.min(height / 2, radius));
+    this.arcTo(0, 0, radius, 0, Math.min(width / 2, radius));
+    
+    // Draw a line back to the start coordinates
+    this.lineTo(width / 2,0);
+    
     // Restore the state of the canvas to as it was before the save
     this.restore();
 }
@@ -69,6 +84,12 @@ var bar = new Image();
 bar.src = "./renders/bar.png";
 var pole = new Image();
 pole.src = "./renders/pole.png";
+var melon = new Image();
+melon.src = "./renders/melon.png";
+var ice = new Image();
+ice.src = "./renders/ice.png";
+var float = new Image();
+float.src = "./renders/float.png";
 
 //layer1
 
@@ -107,6 +128,8 @@ canv_back_props.height = canv_back_props.scrollHeight;
 canv_back_props.width = canv_back_props.scrollWidth;
 var ctx_back_props = canv_back_props.getContext('2d');
 
+var height = window.innerHeight;
+var width = window.innerWidth;
 
 var back = ctx.createLinearGradient(0,0,0,height*.8);
 back.addColorStop(0,"#0773e0");
@@ -148,75 +171,12 @@ ctx_back.fillRect(0,window.innerHeight * 4,window.innerWidth,window.innerHeight)
 ctx_back.fillStyle = back_cols[1];
 ctx_back.fillRect(0,window.innerHeight * 1,window.innerWidth,window.innerHeight);
 ctx_back.fillRect(0,window.innerHeight * 3,window.innerWidth,window.innerHeight);
+ctx_back.fillRect(0,window.innerHeight * 5,window.innerWidth,window.innerHeight);
 
 // layer2
 
 
 
-var Animation_forage = function(){
-    // Explicitly bind update()'s 'this' context and cache in instance property
-    this.boundUpdate = this.update.bind(this);
-
-    this.forage_d = {img : forage, x: 0, y: 0, fac: 1, speed : .7};
-    this.forage_l = {img : forage_li, x: 0, y: 50, fac: 1, speed : 1.5};
-
-    // Track frame time
-    this.lastAnimationTime = 0;
-}
-
-// Define update loop on the "Animation" prototype
-var run__anim = 1;
-var flg = 1;
-var flg3 = 1;
-Animation_forage.prototype.update = function() {
-
-     
-
-    ctx2.clearRect(0, 0, canv2.width, canv2.height);
-    ctx3.clearRect(0, 0, canv3.width, canv3.height);
-
-    // Calculate time since last frame
-    var currentAnimationTime = Date.now();
-    var animationDeltaTime   = (currentAnimationTime - (this.lastAnimationTime || Date.now())) / 3000;
-
-    // Reset time for next frame
-    this.lastAnimationTime = currentAnimationTime;
-
-    // Draw
-    drawimg(this.forage_d.img , ctx2, this.forage_d.x, this.forage_d.y, this.forage_d.fac, this.forage_d.fac);
-    drawimg(this.forage_l.img , ctx3, this.forage_l.x, this.forage_l.y, this.forage_l.fac, this.forage_l.fac);
-
-    // Update props
-    this.forage_d.x -= (this.forage_d.speed * animationDeltaTime) * window.innerWidth / 2;
-    this.forage_d.y -= (this.forage_d.speed * animationDeltaTime) * window.innerHeight / 2;
-    this.forage_d.fac += this.forage_d.speed * animationDeltaTime;
-
-    this.forage_l.x -= (this.forage_l.speed * animationDeltaTime) * window.innerWidth / 2;
-    this.forage_l.y -= (this.forage_l.speed * animationDeltaTime) * window.innerHeight / 2;
-    this.forage_l.fac += this.forage_l.speed * animationDeltaTime;
-
-    //schedule and make constraint
-
-    //for first stop
-    if(this.forage_d.fac > 1.2 && flg){
-        flg = 0;
-        console.log(flg);
-        return;
-    }
-    
-    //for stop when goes out
-    else if((this.forage_d.fac > 2 || this.forage_d.fac < 1.2) && (!flg)){
-        console.log(this.forage_d.fac);
-
-        this.forage_d.speed = this.forage_d.speed * -1;
-        this.forage_l.speed = this.forage_l.speed * -1;
-        return;
-    }
-
-    else{
-        window.requestAnimationFrame(this.boundUpdate);
-    };
-}
 
 
 var Animation_sun = function(){
@@ -303,8 +263,8 @@ var animation_sun = new Animation_sun();
 animation_sun.update();
 
 
-// content layer animations
 
+// content layer non - animations
 
 //woofer
 
@@ -348,16 +308,18 @@ ctx_back_props.arc(250,height / 2 - 105 , 10, 0, 2 * Math.PI);
 ctx_back_props.closePath();
 ctx_back_props.fill();
 
+//stage_light_base
 ctx_back_props.fillStyle = 'rgba(255,255,255,.5)';
 ctx_back_props.beginPath();
-ctx_back_props.arc(width * .8,height * 2.9 , 13, 0, 2 * Math.PI);
-ctx_back_props.arc(width * .2,height * 2.9 , 13, 0, 2 * Math.PI);
+ctx_back_props.arc(width * .8,height * 3.9 , 13, 0, 2 * Math.PI);
+ctx_back_props.arc(width * .2,height * 3.9 , 13, 0, 2 * Math.PI);
 ctx_back_props.closePath();
 ctx_back_props.fill();
 
 
 //lemonade
-drawimg(lem, ctx_back_props, 0, height);
+drawimg(lem, ctx_back_props, 0, height, 1, 1, .5);
+drawimg(melon, ctx_back_props, -width * .1, height * 1.2, .4, .8, .2);
 
 //stage
 // drawimg(crowd, ctx_back_props, 0, height*2);
@@ -377,32 +339,43 @@ var Animation_cont_layer = function(){
     // Explicitly bind update()'s 'this' context and cache in instance property
     this.boundUpdate = this.update.bind(this);
 
-    this.ballobj = {img : ball, x: 100, y: height*3.2, speed : 0, accn : 3000};
+    this.ballobj = {img : ball, x: 100, y: 2.35, time:0};
+    this.floatobj = {img : float, x: width * .55, y: 4.4,dist: .003, time: 1, period: 1.5};
     this.woof = {rad : 75, attack_speed : 60, reck_speed : -700, sp : 100};
+    this.ice = [{img: ice, dist: .0007, time: 0, angle : 14.4, x: .87, y:1.75, period: 1, dim: 100},
+                {img: ice, dist: .001, time: 0.4, angle : 14.4, x:.93, y:1.67, period: 2, dim:100},
+                {img: ice, dist: .001, time: .20, angle : 14.4, x:.95, y:1.87, period: 2, dim:100}];
     this.lights = [{x:width * .2, start: 5, speed: 1.5, left: 5.5, right: 4.5}, {x:width * .8, start: 4, speed: -1.5, left: 4.5 , right: 3.5}];
-
+    
     // Track frame time
     this.lastAnimationTime = 0;
 }
 
 // Define update loop on the "Animation" prototype
 Animation_cont_layer.prototype.update = function() {
-
+    
     ctx_anim.clearRect(0, 0, canv_anim.width, canv_anim.height);
-
+    
     // Calculate time since last frame
     var currentAnimationTime = Date.now();
     var animationDeltaTime   = (currentAnimationTime - (this.lastAnimationTime || Date.now())) / 3000;
 
     // Reset time for next frame
     this.lastAnimationTime = currentAnimationTime;
-
+    
     // Draw
 
+    //float
+    drawimg(this.floatobj.img, ctx_anim, this.floatobj.x, height * this.floatobj.y,height/(2 * width),1/2, .2);
+    this.floatobj.y += this.floatobj.dist * Math.sin(this.floatobj.time * 2 * Math.PI/this.floatobj.period);
+    this.floatobj.time += animationDeltaTime;
+    ctx_anim.clearRect(this.floatobj.x,height * 5, width * .5, height * .5);
+    
     //ball
-    ctx_anim.globalAlpha = .6;
-    drawimg(this.ballobj.img, ctx_anim, this.ballobj.x, this.ballobj.y,height/(2 * width),1/2);
-    ctx_anim.globalAlpha = 1;
+    drawimg(this.ballobj.img, ctx_anim, this.ballobj.x, this.ballobj.y * height,height/(2 * width),1/2, .5);
+    //update
+    this.ballobj.y = 2.15 + (.3 * Math.pow(Math.abs((((this.ballobj.time - Math.floor(this.ballobj.time)) * 2) - 1)), 2));
+    this.ballobj.time += animationDeltaTime;
 
     //woofer
     ctx_anim.fillStyle = back_cols[0];
@@ -415,42 +388,7 @@ Animation_cont_layer.prototype.update = function() {
     ctx_anim.arc(330, height / 2 + 60, 15, 0, 2 * Math.PI);
     ctx_anim.closePath();
     ctx_anim.fill();
-
-    //stage
-    
-    this.lights.forEach((light) => {
-        var light_grad = ctx.createRadialGradient(light.x, height * 2.9,100,light.x, height * 2.9,650);
-        light_grad.addColorStop(0, "rgba(255,255,255,.4)");
-        light_grad.addColorStop(.4, "rgba(255,255,255,.1)");
-        light_grad.addColorStop(1, "rgba(255,255,255,0)");
-        ctx_anim.fillStyle = light_grad;
-        ctx_anim.beginPath();
-        ctx_anim.arc(light.x, height * 2.9, 650, light.start, light.start + .3);
-        ctx_anim.lineTo(light.x, height * 2.9);
-        ctx.closePath();
-        ctx_anim.fill();
-    })
-    
-    ctx_anim.globalAlpha = .5;
-    drawimg(crowd, ctx_anim, 0, height*2);
-    ctx_anim.globalAlpha = 1;
-    
-
-
-    // Update props
-
-    //ball
-    this.ballobj.y += (this.ballobj.speed * animationDeltaTime);
-    this.ballobj.speed += (this.ballobj.accn * animationDeltaTime);
-    if(this.ballobj.y > height * 3.45){
-        this.ballobj.speed = this.ballobj.speed * -1;
-    }
-    if(this.ballobj.y < height * 3.2){
-        this.ballobj.speed = 0;
-        this.ballobj.y = height * 3.2;
-    }
-
-    //woofer
+    //update
     this.woof.rad += this.woof.sp * animationDeltaTime;
     if(this.woof.rad >= 80){
         this.woof.sp = this.woof.reck_speed;
@@ -459,9 +397,23 @@ Animation_cont_layer.prototype.update = function() {
     if(this.woof.rad <= 70){
         this.woof.sp = this.woof.attack_speed;
         this.woof.rad = 71;
-    }
+    } 
 
-    //lights
+    //stage
+    
+    this.lights.forEach((light) => {
+        var light_grad = ctx.createRadialGradient(light.x, height * 3.9,100,light.x, height * 3.9,650);
+        light_grad.addColorStop(0, "rgba(255,255,255,.4)");
+        light_grad.addColorStop(.4, "rgba(255,255,255,.1)");
+        light_grad.addColorStop(1, "rgba(255,255,255,0)");
+        ctx_anim.fillStyle = light_grad;
+        ctx_anim.beginPath();
+        ctx_anim.arc(light.x, height * 3.9, 650, light.start, light.start + .3);
+        ctx_anim.lineTo(light.x, height * 3.9);
+        ctx_anim.fill();
+    })
+    drawimg(crowd, ctx_anim, 0, height*3,1,1,.5);
+    //update
     this.lights.forEach((light) => {
         light.start += light.speed * animationDeltaTime;
         if(light.start > light.left || light.start < light.right){
@@ -469,7 +421,18 @@ Animation_cont_layer.prototype.update = function() {
             light.start = (Math.abs(light.start - light.left) > Math.abs(light.start - light.right)) ? light.right : light.left;
         }
     });
-
+    
+    
+    this.ice.forEach((cube) => {
+        drawimg(cube.img, ctx_anim, width * cube.x, height * cube.y, cube.dim/width, cube.dim/ height);
+        cube.x += cube.dist * Math.sin(cube.time * 2 * Math.PI/cube.period) * Math.sin(cube.angle * Math.PI/ 180);
+        cube.y += cube.dist * Math.sin(cube.time * 2 * Math.PI/cube.period)  * Math.cos(cube.angle * Math.PI/ 180);
+        cube.time += animationDeltaTime;
+        ctx_anim.clearRect(width * .6,height * 2, width * .4, height * .2);
+    })
+    
+    
+    
     //schedule and make constraint
 
     window.requestAnimationFrame(this.boundUpdate);
@@ -478,3 +441,66 @@ Animation_cont_layer.prototype.update = function() {
 var animation_cont_layer = new Animation_cont_layer();
 animation_cont_layer.update();
 
+
+
+
+
+// var Animation_forage = function(){
+//     // Explicitly bind update()'s 'this' context and cache in instance property
+//     this.boundUpdate = this.update.bind(this);
+
+//     this.forage_d = {img : forage, x: 0, y: 0, fac: 1, speed : .7};
+//     this.forage_l = {img : forage_li, x: 0, y: 50, fac: 1, speed : 1.5};
+
+//     // Track frame time
+//     this.lastAnimationTime = 0;
+// }
+
+// // Define update loop on the "Animation" prototype
+// Animation_forage.prototype.update = function() {
+
+     
+
+//     ctx2.clearRect(0, 0, canv2.width, canv2.height);
+//     ctx3.clearRect(0, 0, canv3.width, canv3.height);
+
+//     // Calculate time since last frame
+//     var currentAnimationTime = Date.now();
+//     var animationDeltaTime   = (currentAnimationTime - (this.lastAnimationTime || Date.now())) / 3000;
+
+//     // Reset time for next frame
+//     this.lastAnimationTime = currentAnimationTime;
+
+//     // Draw
+//     drawimg(this.forage_d.img , ctx2, this.forage_d.x, this.forage_d.y, this.forage_d.fac, this.forage_d.fac);
+//     drawimg(this.forage_l.img , ctx3, this.forage_l.x, this.forage_l.y, this.forage_l.fac, this.forage_l.fac);
+
+//     // Update props
+//     this.forage_d.x -= (this.forage_d.speed * animationDeltaTime) * window.innerWidth / 2;
+//     this.forage_d.y -= (this.forage_d.speed * animationDeltaTime) * window.innerHeight / 2;
+//     this.forage_d.fac += this.forage_d.speed * animationDeltaTime;
+
+//     this.forage_l.x -= (this.forage_l.speed * animationDeltaTime) * window.innerWidth / 2;
+//     this.forage_l.y -= (this.forage_l.speed * animationDeltaTime) * window.innerHeight / 2;
+//     this.forage_l.fac += this.forage_l.speed * animationDeltaTime;
+
+//     //schedule and make constraint
+
+//     //for first stop
+//     if(this.forage_d.fac > 1.2 && flg){
+//         flg = 0;
+//         return;
+//     }
+    
+//     //for stop when goes out
+//     else if((this.forage_d.fac > 2 || this.forage_d.fac < 1.2) && (!flg)){
+
+//         this.forage_d.speed = this.forage_d.speed * -1;
+//         this.forage_l.speed = this.forage_l.speed * -1;
+//         return;
+//     }
+
+//     else{
+//         window.requestAnimationFrame(this.boundUpdate);
+//     };
+// }

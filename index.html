@@ -10,24 +10,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="icon" href="renders/logo.png">
     <link rel="stylesheet" href="preloader.css">
     <title>Exodia - This time for tropical</title>
 </head>
 
 <body>
-    <div class="preloader">
+    <div id="max-note">
+        <p>Please maximize the window</p>    
+    </div>
+    <div class="preloader" id="preloader">
         <div id="sun">&nbsp;</div>
         <img id="cloud1" src="renders/melon.png" alt="">
         <img id="cloud2" src="renders/float.png" alt="">
     </div>
-    <navigation>
+    <!-- <navigation>
         <a href="#"><img src="renders/home_sign.png" style="left:10%;" alt=""></a>
         <a href="exodia_temp/sponsors.html"><img src="renders/sponsors_sign.png" style="left:20%;" alt=""></a>
         <a href="exodia_temp/team.html"><img src="renders/team_sign.png" style="right: 10%;" alt=""></a>
         <a href="exodia_temp/register.html"><img src="renders/register_sign.png" style="right:20%;" alt=""></a>
-    </navigation>
+    </navigation> -->
     <div class="canv" id="can_div">
         <canvas class="canvas_layer" id="canv" style="position: absolute; left: 0; top: 0; z-index: 0;">
             Your browser dont support thi shit dawg
@@ -56,13 +59,13 @@
             Your browser dont support thi shit dawg
         </canvas>
         <div class="new">
-            <div class="about container">
-                <img src="renders/mountain.png" style="position: absolute;right: 0; height: 90vh; opacity: 0.5;" alt="">
-                <div class="text-center">
+            <div class="container">
+                <div class="text-right">
                     <h1>About us</h1>
                 </div>
                 <div class="row">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4 "></div>
+                    <div class="col-sm-4 "></div>
                     <div class="col-sm-4 ">
                         <p class="about-text">
                             The biggest and the most magnificent technical and cultural fest of the Himalayas, a
@@ -74,169 +77,126 @@
                     </div>
                 </div>
             </div>
-
-            <div class="events container">
-                <img src="renders/drone.png" style="position: absolute;right: 5%;z-index: 10; width: 20%; opacity: 0.4;" alt="">
+            <div class="container">
                 <div class="text-center">
-                    <h1>events</h1>
+                    <h1>Theme</h1>
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-
-                    <div class="col-sm-4">
-                        <h3>
-                            Cultural
-                        </h3>
-                        <h5>
-                            Let's Show 'em
-                        </h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item yellow">Band Slam</li>
-                            <li class="list-group-item yellow">Canvas Painting</li>
-                            <li class="list-group-item yellow">Couture</li>
-                            <li class="list-group-item yellow">Rap Battle</li>
-                            <li class="list-group-item yellow"><a href="events.html"> View More</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-2"></div>
-
-                    <div class="col-sm-4 align-middle">
-                        <h3>
-                            technical
-                        </h3>
-                        <h5>
-                            Bring Out The Techie In You
-                        </h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item yellow">Line Follower</li>
-                            <li class="list-group-item yellow">Nitro car racing</li>
-                            <li class="list-group-item yellow">RoboSoccer</li>
-                            <li class="list-group-item yellow">Dementia</li>
-                            <li class="list-group-item yellow"><a href="events.html">View More</a></li>
-                        </ul>
+                <div class="row row d-flex justify-content-center">
+                    <div class="w-50 ">
+                        <p class="about-text text-center">
+                            The biggest and the most magnificent technical and cultural fest of the Himalayas, a
+                            complete feast for its participants and sponsors alike, Exodia, is back with its 9th
+                            edition, to thrill the youth with its invigorating cultural extravaganza and brain-storming
+                            technical fiesta. 
+                        </p>
+                    
                     </div>
                 </div>
-                <img src="renders/eminem.png" style="position: absolute; left: 0;bottom: 325vh; opacity: 0.5;height: 10%;" alt="">
-                <div class="row">
-                    <div class="col-sm-4 align-middle">
-                        
-                    </div>
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-4">
-                        <!-- <img src="renders/band.png"> -->
-                    </div>
-                </div>
-                
+            </div>
+            <div class="container">
+                <div class="text-center">
+                    <h1>Events</h1>
+                    <div id="event_carousel" class="event_carousel carousel slide" data-ride="carousel" data-wrap="true" data-interval="3000">
+                        <div class="carousel-inner" id="event_carousel_inner">
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                </div> 
             </div>
             <div class="sponsors container">
                 <div class="text-center">
-                    <h1>sponsors</h1>
-                </div>
-                <div class="row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2 ">
-                        <div class="wrapper">
-                            <div class="card" style="text-align:center;">
-                                <img src="brands/aasiyana decor.jpg" class="enclosed">
-                            </div>
+                    <h1>Sponsors</h1>
+                    <div id="spon_carousel" class="spon_carousel slide text-center" data-ride="carousel" data-wrap="true" data-interval="3000">
+                        <div class="carousel-inner" id="spon_carousel_inner">
                         </div>
                     </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2">
-                        <div class="wrapper">
-                            <div class="card" style="text-align:center;">
-                                <img src="brands/AIMCO SOLUTIONS.png" class="enclosed">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2 ">
-                        <div class="wrapper">
-                            <div class="card" style="text-align:center;">
-                                <img src="brands/ashoka furniture.jpg" class="enclosed">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-2 ">
-                        <div class="wrapper">
-                            <div class="card" style="text-align:center;">
-                                <img src="brands/Asset 3@600x.png" class="enclosed">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>                
                 <div class="row">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8 ">
                         <p class="about-text text-center" style="padding: 3%;">
-                            <a href="team.html" class="text-center">View Them all</a>
+                            <a href="team.html" class="text-center">More</a>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="team container">
-                <img src="renders/lights.png" class="black" style="position: absolute;width: 30%; top: 297vh;right: 0;" alt="">
-                <img src="renders/lights.png" class="black" style="position: absolute;width: 20%; top: 297vh;left: 0;transform: rotateY(180deg);" alt="">
                 <div class="text-center">
-                    <h1>team</h1>
+                    <h1>Team</h1>
                 </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8 ">
-                        <p class="about-text" style="padding: 3%;">
-                            Team is what makes us stronger. Presenting the team who realised the event.
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
+                <div class="row m">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3 team-card">
                         <img src="team/vaibhav.jpg" class="team-member" alt="">
-                        <h5 class="text-center">Vaibhav Mongia</h5>
-                        <h4 class="text-center">Convenor</h4>
+                        <h5 class="text-center name">Vaibhav Mongia</h5>
+                        <h4 class="text-center position">Convenor</h4>
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3 team-card">
-                        <img src="team/dipanshu.jpg" class="team-member" alt="">
-                        <h5 class="text-center">Dipanshu</h5>
-                        <h4 class="text-center">Web-Dev</h3>
+                        <img src="team/khyati.jpg" class="team-member" alt="">
+                        <h5 class="text-center name">Khyati</h5>
+                        <h4 class="text-center position">Sponsorship Team</h3>
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3 team-card">
                         <img src="team/ali.jpg" class="team-member" alt="">
-                        <h5 class="text-center">Ali</h4>
-                        <h4 class="text-center">publicity</h3>
+                        <h5 class="text-center name">Ali</h4>
+                        <h4 class="text-center position">Publicity</h3>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row m">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/vishesh.jpg" class="team-member" alt="">
+                        <h5 class="text-center name">Vishesh Mongia</h5>
+                        <h4 class="text-center position">Planning</h4>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/harsh.jpg" class="team-member" alt="">
+                        <h5 class="text-center name">Harsh</h5>
+                        <h4 class="text-center position">WebD</h3>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 team-card">
+                        <img src="team/kunal.jpg" class="team-member" alt="">
+                        <h5 class="text-center name">Kunal</h4>
+                        <h4 class="text-center position">Media</h3>
+                    </div>
+                </div>
+                <div class="row more">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8 ">
                         <p class="about-text text-center" style="padding: 3%;">
-                            <a href="team.html" class="text-center">View Them all</a>
+                            <a href="team.html" class="text-center">More</a>
                         </p>
                     </div>
                 </div>
-                <img src="" alt="">
             </div>
-            <footer class="footer container">
-                <img src="renders/forage_dark.png" style="position:absolute; left:0;top: 397vh;" alt="">
+            <div class="footer">
                 <div class="text-center">
                     <h1>Exodia</h1>
                 </div>
-                <div class="row">
-                    <div class="col-sm-4">
+                <div class="d-flex flex-row">
+                    <div class="p-2 foot-logo">
                         <img src="renders/logo.png" alt="">
                     </div>
-                    <div class="col-sm-5 ">
-                        <p class="about-text">
+                    <div class="p-2 text-center">
+                        <p class="footer-note w-50 text-center">
                             The biggest and the most magnificent technical and cultural fest of the Himalayas, a complete feast for its participants and sponsors alike, Exodia, is back with its 9th edition, to thrill the youth with its invigorating cultural extravaganza and brain-storming technical fiesta.
                         </p>
-                        <h4 class="text-center">Welcome to iit mandi</h4>
-                        <h4 class="text-center">Welcome to Exodia 2020</h4>
+                        <p class="footer-note text-center">Welcome to IIT Mandi</p>
+                        <p class="footer-note text-center">Welcome to Exodia 2020</p>
                     </div>
-                    <div class="col-sm-3">
-                        <ul class="list-group list-group-flush">
+                    <div class="p-2">
+                        <ul class="list-group list-group-flush w-75 text-center">
                             <li class="list-group-item green">
                                 <img src="renders/phone.png" alt="">
                                 Contact us</li>
@@ -251,10 +211,11 @@
                         </ul>
                     </div>
                 </div>
-            </footer>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
+    <script src="./filler.js"></script>
 </body>
 
 </html>

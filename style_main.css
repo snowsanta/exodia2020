@@ -1,10 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
+@font-face { font-family: BeautyMountains; src: url('./fonts/BeautyMountains.ttf'); } 
+@font-face { font-family: LemonJelly; src: url('./fonts/LemonJelly.ttf'); } 
+@font-face { font-family: QuickKiss; src: url('./fonts/QuickKiss.ttf'); } 
+
+body::-webkit-scrollbar {
+    width: .4em;
+    background:rgba(0, 0, 0, 0);
 }
 
-html {
-    font-family: 'Bangers', cursive;
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    outline: 2px solid slategrey;
+}
+
+
+:root {
+    --head-col: #FF6F69;
+    --card-head: #FFCC5C;
+    --yellow: #FFEEAD;
+  }
+
+* {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#max-note{
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background-color: #414953;
+    color: white;
+    font-family: QuickKiss;
 }
 
 .canvas_layer {
@@ -23,12 +52,11 @@ html {
 }
 
 .content {
-    top: 1080px;
+    top: 100%;
     position: absolute;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
-    height: 500%;
 }
 
 .content_canv {
@@ -37,6 +65,7 @@ html {
 
 .new {
     position: relative;
+    top: 0;
     z-index: 3000;
 }
 
@@ -54,34 +83,18 @@ div {
 }
 
 h1 {
-    font-family: 'Bangers', cursive;
+    font-family: BeautyMountains;
     position: relative;
-    font-size: 4vw !important;
+    font-size: 7em !important;
     margin: 2.5% !important;
-}
+    color: var(--head-col);
+    display:inline-block;
+    -webkit-transform:scale(1.3,1); /* Safari and Chrome */
+    -moz-transform:scale(1.3,1); /* Firefox */
+    -ms-transform:scale(1.3,1); /* IE 9 */
+    -o-transform:scale(1.3,1); /* Opera */
+    transform:scale(1.3,1); /* W3C */
 
-h2 {
-    font-family: 'Bangers', cursive;
-    position: relative;
-    font-size: 3.5vw !important;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-h3 {
-    font-family: 'Bangers', cursive;
-    position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 3vw !important;
-}
-
-h4 {
-    font-family: 'Bangers', cursive;
-    position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 2.5vw !important;
 }
 
 .about-text {
@@ -91,6 +104,9 @@ h4 {
 
 .container {
     min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: block;
 }
 
 img {
@@ -98,44 +114,40 @@ img {
     max-width: 100%;
 }
 
-.yellow {
-    background-color: rgb(255, 238, 173) !important;
-}
-
-.green {
-    background-color: rgb(150, 206, 180) !important;
-}
-
-.green img {
-    width: 25%;
-}
-
-.carousel-item img {
-    max-height: 255px !important;
-    width: auto !important;
-}
-
-.carousel-item {
-    height: 255px !important;
+.green{
+    background-color: #FFEEAD !important;
 }
 
 .team-member {
     border-radius: 20%;
     padding: 2%;
     width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .team-card {
     background-color: rgba(79, 80, 80, 0.034);
     border-radius: 10%;
+    position: relative;
 }
 
-.footer-icons {
-    margin: 5%;
+.footer{
+    height: 30%;
+    font-size: 1em !important; 
 }
 
-.footer-icons img {
-    width: 25%;
+.footer-note{
+    margin-left: auto ;
+    margin-right: auto ;
+}
+
+.footer img{
+    width: 15%;
+}
+
+.foot-logo img{
+    width: 100%;
 }
 
 .team .vine {
@@ -245,11 +257,96 @@ navigation h4:hover {
     color: white;
 }
 
-@keyframes sign {
+/* @keyframes sign {
     from {
         transform: rotateZ(3deg);
     }
     to {
         transform: rotateZ(-3deg);
     }
+} */
+
+.event_carousel{
+    width: 60%;
+    min-height: 100%;
+    left: 35%;
+    margin-top: 10%;
+}
+
+.spon_carousel{
+    width: 90%;
+    height: 35vh !important;
+    margin-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card_item{
+    display: inline-block;
+}
+
+.carousel-control.left .glyphicon {
+    left: 0;
+    margin-left: 0;
+}
+.carousel-control.right .glyphicon {
+    right: 0;
+    margin-right: 0;
+}
+
+.mycard{
+    height: 50vh;
+    display: block;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+}
+
+.mycard img{
+    width: 10%;
+    object-fit: cover;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.card_text h4{
+    font-family: LemonJelly;
+    font-size: 4em;
+    color: var(--card-head);
+    
+}
+
+.mycard_spon{
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mycard_spon img{
+    width: 20%;
+    object-fit: contain;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.m{margin-top: 1vh;}
+
+.name{
+    font-family: LemonJelly;
+    font-size: 3em;
+    color: #F8703C;
+}
+
+.position{
+    font-size: 1em;
+}
+
+.team{
+    margin-top: -20px;
+}
+
+.more{
+    margin-top: -2vh;
 }
