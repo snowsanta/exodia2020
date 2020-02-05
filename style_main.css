@@ -25,6 +25,10 @@ body::-webkit-scrollbar-thumb {
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 #max-note{
     opacity: 0;
     position: fixed;
@@ -42,6 +46,8 @@ body::-webkit-scrollbar-thumb {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    position: absolute;
+    top: 0;
 }
 
 .canv {
@@ -105,8 +111,8 @@ h1 {
 .container {
     min-height: 100vh;
     padding: 0;
-    margin: 0;
     display: block;
+    position: relative;
 }
 
 img {

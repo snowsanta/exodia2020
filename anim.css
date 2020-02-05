@@ -1,0 +1,78 @@
+:root {
+    --head-col: #FF6F69;
+    --card-head: #FFCC5C;
+    --yellow: #FFEEAD;
+}
+
+.float{
+    position: absolute;
+    width: 35%;
+    opacity: .3;
+    top: 40%;
+    left: 60%;
+    animation: float ease-in-out 2s infinite alternate;
+}
+
+.ball{
+    position: absolute;
+    width: 40%;
+    opacity: .3;
+    top: 30%;
+    left: -15%;
+    animation: ball ease-in 1.5s infinite alternate;
+}
+
+.ice{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 10%;
+    background-color: var(--yellow);
+    animation: ice_anim ease-in-out 1.5s infinite alternate;
+}
+
+.i1{
+    top: 63%;
+    left: 120%;
+}
+
+.i2{
+    top: 79%;
+    left: 115%;
+    animation-delay: .7s;
+}
+
+.i3{
+    top: 82%;
+    left: 127%;
+    animation-delay: .99s;
+}
+
+
+
+@keyframes ice_anim{
+    from{
+        transform: translateY(0) translateX(0) rotate(69deg);
+    }
+    to{
+        transform: translateY(50%) translateX(20%) rotate(69deg);
+    }
+}
+
+@keyframes ball{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(50%);
+    }
+}
+
+@keyframes float{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(20%);
+    }
+}
