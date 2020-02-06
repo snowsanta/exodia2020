@@ -12,12 +12,15 @@ body::-webkit-scrollbar-thumb {
     outline: 2px solid slategrey;
 }
 
+body{
+    overflow-x: hidden;
+}
 
 :root {
     --head-col: #FF6F69;
     --card-head: #FFCC5C;
     --yellow: #FFEEAD;
-  }
+}
 
 * {
     margin: 0 0 0 0;
@@ -34,6 +37,7 @@ body::-webkit-scrollbar-thumb {
     background-color: #414953;
     color: white;
     font-family: QuickKiss;
+    pointer-events: none;
 }
 
 .canvas_layer {
@@ -133,8 +137,8 @@ img {
 }
 
 .footer{
-    height: 30%;
     font-size: 1em !important; 
+    padding-top: 5%;
 }
 
 .footer-note{
@@ -350,3 +354,53 @@ navigation h4:hover {
 .more{
     margin-top: -2vh;
 }
+
+.b-0{
+    padding-top: 5%;
+}
+
+.icons a{
+    display: inline-block;
+    width: 7vh;
+    height: 5vh;
+    border-radius: 50px;
+    background-size: cover;
+    text-decoration: none;
+    background-color: #aaa;
+    margin: auto 2%;
+  }
+  #fb{
+    background-image: url(icons/fb.png);
+  }
+  #tw{
+    background-image: url(icons/tw.png);
+  }
+  #rd{
+    background-image: url(icons/rd.png);
+  }
+  #yt{
+    background-image: url(icons/yt.png);
+  }
+  #fb:hover{
+    background-image: url(icons/fbc.png);
+  }
+  #tw:hover{
+    background-image: url(icons/twc.png);
+  }
+  #rd:hover{
+    background-image: url(icons/rdc.png);
+  }
+  #yt:hover{
+    background-image: url(icons/ytc.png);
+  }
+  .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    top: 100%;
+    transform: translateY(-200%);
+    position: absolute;
+  }
+  .icon-wrap{
+      position: relative;
+  }
