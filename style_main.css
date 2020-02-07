@@ -184,7 +184,6 @@ img {
 }
 
 .team-card {
-    box-shadow: 1px 1px 5px rgba(249, 198, 26, 0.5);
     border-radius: 0%;
     position: relative;
 }
@@ -209,6 +208,8 @@ img {
 .footer {
     font-size: 1em !important;
     padding-top: 5%;
+    position: relative;
+    bottom: 0;
 }
 
 .footer-note {
@@ -490,16 +491,6 @@ navigation h4:hover {
     padding-top: 5%;
 }
 
-.icons a {
-    display: inline-block;
-    width: 7vh;
-    height: 5vh;
-    border-radius: 50px;
-    background-size: cover;
-    text-decoration: none;
-    background-color: #aaa;
-    margin: auto 2%;
-}
 
 #fb {
     background-image: url(icons/fb.png);
@@ -533,13 +524,8 @@ navigation h4:hover {
     background-image: url(icons/ytc.png);
 }
 
-.icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    top: 100%;
-    transform: translateY(-200%);
-    position: absolute;
+.icons img {
+    margin-right: 5%;
 }
 
 .icon-wrap {
