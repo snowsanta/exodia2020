@@ -194,6 +194,7 @@ img {
     position: relative;
     padding: 0 !important;
     background-color: black;
+    height: 70vh;
 }
 
 .event-card img {
