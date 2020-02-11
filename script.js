@@ -90,6 +90,8 @@ var ice = new Image();
 ice.src = "./renders/ice.png";
 var float = new Image();
 float.src = "./renders/float.png";
+var logo_white = new Image();
+logo_white.src = "./renders/logo_white.png";
 
 //layer1
 
@@ -143,12 +145,25 @@ back.addColorStop(.8,"#e9ede0");
 back.addColorStop(1,"#ffecd1");
 ctx.fillStyle = back;
 ctx.fillRect(0,0,width,height);
-drawimg(forage_li , ctx2, 0,50);
-drawimg(forage , ctx3, 0,0);
 // drawimg(seat , ctx, width * .7,height*.5,140/width,180/height);
 // drawimg(umbrella , ctx, width * .7,height*.25,280/width,400/height);
 // drawimg(table , ctx, width * .65,height*.65,70/width,90/height);
-drawimg(logo , ctx, width * .38,height*.05,400/width,290/height);
+
+
+// ctx.beginPath();
+// ctx.fillStyle = "white";
+// ctx.beginPath();
+// ctx.roundedRect(width * .3, height * .53, width * .4, height * .15, 20);
+// ctx.fill();
+// ctx.lineWidth = 5;
+// ctx.stroke();
+// ctx.closePath();
+
+//drawimg(text_logo , ctx3, 0, 0);
+//drawimg(logo , ctx, width * .5,height*.05,80/width,60/height);
+drawimg(logo_white , ctx, width * .32,height*.1,500/width,320/height);
+drawimg(forage_li , ctx2, 0,50);
+drawimg(forage , ctx3, 0,0);
 drawimg(bar , ctx, width * .75,height*.55,400/width,290/height);
 drawimg(pole , ctx, width * .097,height*.65,10/width,190/height);
 drawimg(pole , ctx, width * .247,height*.65,10/width,190/height);
@@ -156,6 +171,7 @@ drawimg(pole , ctx, width * .397,height*.65,10/width,190/height);
 
 
 ctx.beginPath();
+ctx.lineWidth = 1;
 ctx.moveTo(-width * .15,height*.655);
 ctx.quadraticCurveTo(-width * .025,height * .8, width * .1,height*.655);
 ctx.quadraticCurveTo(width * .175,height * .8, width * .25,height*.655);
@@ -235,7 +251,7 @@ this.lastAnimationTime = currentAnimationTime;
 
     var grd = ctx.createRadialGradient(this.sun.x,this.sun.y,this.sun.in_rad,this.sun.x,this.sun.y,this.sun.out_rad);
     grd.addColorStop(0, this.sun.col + "1)");
-    grd.addColorStop(.1, this.sun.col + ".5)");
+    grd.addColorStop(.1, this.sun.col + ".7)");
     grd.addColorStop(1, this.sun.col + "0)");
     
     
@@ -263,7 +279,7 @@ this.lastAnimationTime = currentAnimationTime;
         ctx4.arc(bulb.x, bulb.y, 500, 0, 2 * Math.PI);
         ctx4.fill();
         ctx4.closePath();
-        bulb.out_rad = 7 - (3 * Math.sin(bulb.time/.09));
+        bulb.out_rad = 7 - (3 * Math.sin(bulb.time/.2));
         bulb.time += animationDeltaTime;
     });
 
@@ -366,6 +382,97 @@ drawimg(melon, ctx_back_props, -width * .1, height * 1.2, .4, .8, .2);
 //ball
 //drawimg(ball, ctx_back_props, 0, height*3,height/(2 * width),1/2);
 
+
+function getdatetime(msec = -1) {
+
+    var today = new Date();
+
+    var date2 = new Date("2020-04-04T08:00:00");
+    if (msec === -1){msec = date2 - today; console.log("this")};
+    var sec = Math.floor(msec / 1000);
+    var mins = Math.floor(msec / 60000);
+    var hrs = Math.floor(mins / 60);
+    var days = Math.floor(hrs / 24);
+    sec = sec % 60;
+    mins = mins % 60;
+    hrs = hrs % 24;
+    days = days % 365;
+    console.log({days: days, hours: hrs, min: mins, sec: sec},  msec, Math.floor(msec / 60000) % 60);
+    return {days: days, hours: hrs, min: mins, sec: sec, raw: msec};
+};
+  
+
+var Animation_counter = function(){
+    // Explicitly bind update()'s 'this' context and cache in instance property
+    this.boundUpdate = this.update.bind(this);
+    this.date = getdatetime();
+    // Track frame time
+}
+
+// Define update loop on the "Animation" prototype
+Animation_counter.prototype.update = function() {
+    
+
+    ctx.fillStyle = "#FF6F69";
+    //ctx.fillRect(width * .3 + 10, height * .53 + 10, width * .4 - 20, height * .15 - 20);
+
+    // ctx.fillText((this.date.days).toString().padStart(2,0), width * .35 + 10, height * .60);
+    // ctx.fillText((this.date.hours).toString().padStart(2,0), width * .45 + 10, height * .60);
+    // ctx.fillText((this.date.min).toString().padStart(2,0), width * .55 - 10, height * .60);
+    // ctx.fillText((this.date.sec).toString().padStart(2,0), width * .65 - 10, height * .60);
+
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = "white";
+    ctx.beginPath();
+    ctx.arc(width * .35, height * .615 , 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(width * .45, height * .615 , 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(width * .55, height * .615 , 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(width * .65, height * .615 , 50, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.stroke();
+    ctx.closePath();
+
+
+    ctx.fillStyle = "white";
+    ctx.font = "30px Ariel";
+    ctx.fillText((this.date.days).toString().padStart(2,0), width * .35, height * .60);
+    ctx.fillText((this.date.hours).toString().padStart(2,0), width * .45, height * .60);
+    ctx.fillText((this.date.min).toString().padStart(2,0), width * .55, height * .60);
+    ctx.fillText((this.date.sec).toString().padStart(2,0), width * .65, height * .60);
+    
+    
+    
+    ctx.textAlign = "center";
+    ctx.font = "30px QuickKiss";
+    ctx.fillText("Days", width * .35, height * .65);
+    ctx.fillText("Hours", width * .45, height * .65);
+    ctx.fillText("Mins", width * .55, height * .65);
+    ctx.fillText("Secs", width * .65, height * .65);
+    
+    this.date = getdatetime(this.date.raw - 1000);
+    
+    
+
+    setTimeout(this.boundUpdate, 1000);
+}
+
+var animation_counter = new Animation_counter();
+animation_counter.update()
 
 
 var Animation_cont_layer = function(){
