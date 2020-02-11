@@ -388,7 +388,7 @@ function getdatetime(msec = -1) {
     var today = new Date();
 
     var date2 = new Date("2020-04-04T08:00:00");
-    if (msec === -1){msec = date2 - today; console.log("this")};
+    if (msec === -1){msec = date2 - today};
     var sec = Math.floor(msec / 1000);
     var mins = Math.floor(msec / 60000);
     var hrs = Math.floor(mins / 60);
@@ -397,7 +397,6 @@ function getdatetime(msec = -1) {
     mins = mins % 60;
     hrs = hrs % 24;
     days = days % 365;
-    console.log({days: days, hours: hrs, min: mins, sec: sec},  msec, Math.floor(msec / 60000) % 60);
     return {days: days, hours: hrs, min: mins, sec: sec, raw: msec};
 };
   
