@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "user";
+$username = "login_exodia";
 $password = "password231099";
 $dbname = "myDB";
 
