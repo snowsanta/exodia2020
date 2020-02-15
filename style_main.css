@@ -502,35 +502,35 @@ navigation h4:hover {
 
 
 #fb {
-    background-image: url(./icons/fb.png);
+    background-image: url('./icons/fb.png');
 }
 
 #tw {
-    background-image: url(./icons/tw.png);
+    background-image: url('./icons/tw.png');
 }
 
 #rd {
-    background-image: url(./icons/rd.png);
+    background-image: url('./icons/rd.png');
 }
 
 #yt {
-    background-image: url(./icons/yt.png);
+    background-image: url('./icons/yt.png');
 }
 
 #fb:hover {
-    background-image: url(./icons/fbc.png);
+    background-image: url('./icons/fbc.png');
 }
 
 #tw:hover {
-    background-image: url(./icons/twc.png);
+    background-image: url('./icons/twc.png');
 }
 
 #rd:hover {
-    background-image: url(./icons/rdc.png);
+    background-image: url('./icons/rdc.png');
 }
 
 #yt:hover {
-    background-image: url(./icons/ytc.png);
+    background-image: url('./icons/ytc.png');
 }
 
 .icons img {
