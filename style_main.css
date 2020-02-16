@@ -205,6 +205,13 @@ img {
     height: 70vh;
 }
 
+@media only screen and (max-width: 600px){
+    .event-card img {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
 .event-card img {
     transition: 1s ease;
 }
@@ -394,6 +401,12 @@ navigation h4:hover {
     padding: 0;
 }
 
+@media only screen and (max-width: 600px){
+    .mycard_spon img {
+        width: 30px;
+    }
+}
+
 .card_text h4 {
     font-family: LemonJelly;
     font-size: 4em;
@@ -450,6 +463,19 @@ navigation h4:hover {
 .event-card:hover .top {
     opacity: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    .event-card:hover .middle {
+        opacity: 1;
+    }
+    .event-card:hover .bottom {
+        opacity: 1;
+    }
+    .event-card:hover .top {
+        opacity: 1;
+    }
+}
+
 .text {
     font-family: LemonJelly;
     background-color:none;
