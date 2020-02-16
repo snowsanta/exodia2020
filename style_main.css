@@ -560,6 +560,17 @@ navigation h4:hover {
     margin-right: 6%;
 }
 
+.mobile-text {
+    font-size: x-large;
+    font-family: LemonJelly;
+}
+
+.mobile-heading {
+    font-size: 3em;
+    font-family: LemonJelly;
+    color: var(--head-col);
+}
+
 @media only screen and (max-width: 600px) {
     h1 {
         font-family: BeautyMountains;
