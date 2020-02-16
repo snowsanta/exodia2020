@@ -571,6 +571,12 @@ navigation h4:hover {
     color: var(--head-col);
 }
 
+.mobile-heading-entry {
+    font-size: 3em;
+    font-family: LemonJelly;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 600px) {
     h1 {
         font-family: BeautyMountains;
