@@ -561,6 +561,7 @@ navigation h4:hover {
 }
 
 .mobile-text {
+    padding: 20px !important;
     font-size: x-large;
     font-family: LemonJelly;
 }
