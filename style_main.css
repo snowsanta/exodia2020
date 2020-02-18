@@ -157,7 +157,7 @@ h1 {
 .about-text {
     margin-top: 5%;
     font-size: 1.5vw;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Montserrat', cursive;
 
 }
 
@@ -590,8 +590,9 @@ navigation h4:hover {
 
 .mobile-text {
     padding: 20px !important;
-    font-size: x-large;
-    font-family: 'Dancing Script', cursive;
+    font-size: large;
+    font-family: 'Montserrat', cursive;
+    
 }
 
 .mobile-heading {
@@ -604,6 +605,15 @@ navigation h4:hover {
     font-size: 3em;
     font-family: LemonJelly;
     padding: 10px;
+}
+
+.footer-title {
+    color: white;
+
+}
+
+.bigger-title {
+    font-size: xx-large;
 }
 
 @media only screen and (max-width: 600px) {
