@@ -1,6 +1,5 @@
 var back_cols = ["rgb(150,206,180)","rgb(255,238,173)"]
 
-
 Array.from(document.getElementsByClassName("container")).forEach((div) => {
     div.style.height = window.innerHeight + "px";
 })
@@ -11,7 +10,7 @@ window.addEventListener('load', function(event){
         document.getElementById("max-note").style.opacity = "1";
         load_flg = 1;
     };
-    document.getElementById("preloader").classList.add("finish");
+    document.getElementById("preloader").classList.add("finish")
 })
 
 window.addEventListener('resize', function(event){
@@ -63,7 +62,6 @@ CanvasRenderingContext2D.prototype.roundedRect = function (x, y, width, height, 
     this.restore();
 }
 
-
 var forage_li = new Image();
 forage_li.src = './renders/forage_light.png';
 var forage = new Image();
@@ -78,6 +76,10 @@ var seat = new Image();
 seat.src = "./renders/seat.png";
 var umbrella = new Image();
 umbrella.src = "./renders/umbrella.png";
+var table = new Image();
+table.src = "./renders/table.png";
+var logo = new Image();
+logo.src = "./renders/exodia_logo.png";
 var bar = new Image();
 bar.src = "./renders/bar.png";
 var pole = new Image();
@@ -90,7 +92,6 @@ var float = new Image();
 float.src = "./renders/float.png";
 var logo_white = new Image();
 logo_white.src = "./renders/logo_white.png";
-
 
 //layer1
 
