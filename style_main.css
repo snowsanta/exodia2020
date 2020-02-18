@@ -680,7 +680,7 @@ navigation h4:hover {
     padding: 5%;
 }
 
-.mySlides, .mySildes1, .mySlides2 {
+.mySlides, .mySlides1, .mySlides2 {
     display: none;
     min-height: 20vh;
 }
