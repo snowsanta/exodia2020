@@ -667,6 +667,7 @@ navigation h4:hover {
     .mobilehidden {
         display: none;
     }
+}
 
 
 
@@ -679,7 +680,39 @@ navigation h4:hover {
     padding: 5%;
 }
 
-.sponsors-list img{
-    padding: 5%;
-    width: 75%;
+.mySlides, .mySildes1, .mySlides2 {
+    display: none;
+    min-height: 20vh;
 }
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  .mySlides img, .mySlides1 img, .mySlides2 img {
+      max-height: 20vh;
+      margin-bottom: 2vh;
+      max-width: 75%;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-direction: alternate;
+    animation-name: fade;
+    animation-duration: 2s;
+    animation-direction: alternate;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
