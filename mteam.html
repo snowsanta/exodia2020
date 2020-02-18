@@ -14,6 +14,23 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="icon" href="renders/logo.png">
     <link rel="stylesheet" href="preloader.css">
+    <script>
+        $(document).ready(function () {
+
+            /* Every time the window is scrolled ... */
+            $(window).scroll(function () {
+                /* Check the location of each desired element */
+                $('.hideme').each(function (i) {
+                    var bottom_of_object = $(this).offset().top + $(this).outerHeight() / 3;
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    /* If the object is completely visible in the window, fade it it */
+                    if (bottom_of_window > bottom_of_object) {
+                        $(this).animate({ 'opacity': '1' }, 500);
+                    }
+                });
+            });
+        });
+    </script>
     <!-- <link rel="stylesheet" href="team.css"> -->
     <title>Exodia - This time for tropical</title>
 </head>
@@ -66,7 +83,7 @@
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">99881 54700</h3>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/khyati.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Khyati</h4>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">99101 77526</h3>
@@ -77,7 +94,7 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/aditya.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Aditya</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">97111 20378</h4>
@@ -88,14 +105,14 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/ali.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Ali</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">91690 49219</h4>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-3 team-card">
-                <img src="team/animesh.jpg" class="team-member" alt="">
+                <img src="team/animesh.jpg hideme" class="team-member" alt="">
                 <h5 class="text-center name">Animesh</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">95715 69340</h3>
             </div>
@@ -105,19 +122,19 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/vishesh.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Vishesh</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">70150 59548</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/ujjwal.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Ujjwal</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">96857 73989</h3>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/ishaan.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Ishaan</h4>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">83980 84949</h3>
@@ -129,13 +146,13 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/rajan.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Rajan</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">97992 29984</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/vishal.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Vishal</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">80770 17831</h3>
@@ -146,7 +163,7 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/aman.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Aman</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">94626 17140</h4>
@@ -157,7 +174,7 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/anjali.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Anjali</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">97934 54229</h4>
@@ -169,7 +186,7 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/kunal.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Kunal</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">62653 21081</h4>
@@ -181,13 +198,13 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/rachit.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Rachit</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">86199 98692</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/aakash.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Aakash</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">97921 71315</h3>
@@ -199,13 +216,13 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/anam.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Anam</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">73553 61449</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/anooshka.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Anooshka</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">84476 65554</h3>
@@ -217,13 +234,13 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/kalyani.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Kalyani</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">82107 09859</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/awantika.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Awantika</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">98167 79178</h3>
@@ -235,7 +252,7 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/hemraj.jpg" class="team-member" alt="">
                 <h5 class="text-center name">hemraj</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">94268 70760</h4>
@@ -247,13 +264,13 @@
         </div>
         <div class="row m">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/yash.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Yash</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">91160 49105</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/deepti.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Deepti</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">99109 01283</h3>
@@ -265,13 +282,13 @@
         </div>
         <div class="row m" style="margin-bottom: 5%;">
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/dipanshu.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Dipanshu</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">9041118938</h4>
             </div>
             <div class="col-sm-1"></div>
-            <div class="col-sm-3 team-card">
+            <div class="col-sm-3 team-card hideme">
                 <img src="team/harsh.jpg" class="team-member" alt="">
                 <h5 class="text-center name">Harsh</h5>
                 <h4 class="text-center position"><img src="https://img.icons8.com/dusk/50/000000/ringing-phone.png">99925 40895</h3>
