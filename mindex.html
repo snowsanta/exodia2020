@@ -20,6 +20,23 @@
           height: 100%;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+    
+        /* Every time the window is scrolled ... */
+        $(window).scroll( function(){
+            /* Check the location of each desired element */
+            $('.hideme').each( function(i){
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight()/3;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                /* If the object is completely visible in the window, fade it it */
+                if( bottom_of_window > bottom_of_object ){
+                    $(this).animate({'opacity':'1'},500);
+                }
+            });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -44,25 +61,24 @@
           </button>
         </nav>
       </div>
-            <div class="landing" style="padding: 0;margin: 0; background-color: #96CEB4;height: -webkit-fill-available;">
-                <h3 class="mobile-text" style="position: relative;top: 100px;padding: 20px;">IIT MANDI's</h3>
+            <div class="landing" style="padding: 0;margin: 0; background-color: #343A40;height: -webkit-fill-available;">
                 <!-- <img src="renders/forage_dark.png" alt="" style="height: 80vh;margin: 0;position: absolute;top: 0;opacity: 0.4;"> -->
                 <img src="renders/al_coco_left.png" alt="" style="margin: 0;position: absolute;top: 50%;transform: translateY(-50%) rotateY(180deg) translateX(50%);right: 0;opacity: 0.5;">
                 <img src="renders/al_coco_left.png" alt="" style="margin: 0;position: absolute;top: 50%;transform: translateY(-50%) translateX(50%);opacity: 0.5;">
                 <div class="text-center" style="position: absolute;top: 50%;transform: translateY(-50%) translateX(-50%);left: 50%;">
-                    <img src="renders/logo-dark.png" alt="" style="transform: scale(2);">
+                    <img src="renders/logo_white.png" alt="" style="transform: scale(2);">
                 </div>
-                <img src="renders/lemonade_sill.png" alt="" style="position: absolute;bottom: 0; opacity: 0.4;"> 
+                <!-- <img src="renders/lemonade_sill.png" alt="" style="position: absolute;bottom: 0; opacity: 0.4;">  -->
             </div>
             <div style="background-color: #FFEEAD;padding: 10px;min-height: 100vh;">
                 <div class="text-center">
-                    <h1>About us</h1>
+                    <h1 class="hideme">About us</h1>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 "></div>
                     <div class="col-sm-4 "></div>
                     <div class="col-sm-4 ">
-                        <p class="mobile-text">
+                        <p class="mobile-text hideme">
                             Nestled upon the crown of India, Himalayas, IIT Mandi is gearing up to present the 9th edition of its Annual Techno-cultural fest Exodia. Exodia with every progressing year is becoming culturally more vibrant and confluent technically. This year’s theme Tropical Getaway would let vastness of the sea set us free as well as acquaint us with the necessity of wandering without being lost. Aptly ensembled with Junkyard Wars, Ramp Walks, Art, Music, Code, Robots, Poems and Dance, we proudly present Exodia 2020.
                         </p>
                     
@@ -71,13 +87,13 @@
             </div>
             <div style="background-color: #96CEB4;padding: 20px;min-height: 100vh;">
                 <div class="text-center">
-                    <h1>Theme</h1>
+                    <h1 class="hideme">Theme</h1>
                 </div>
                 <div class="row">
                     <div class="col-sm-4 "></div>
                     <div class="col-sm-4 "></div>
                     <div class="col-sm-4 ">
-                        <p class="mobile-text">
+                        <p class="mobile-text hideme">
                             “Surrounded by gigantic mountains, but yet the spirits of the sea.”
                             The ocean stirs the heart, inspires the imagination and brings eternal joy to the soul.
                             Mountains are a symbol of strength, persistance , tenacity and boldness. Whereas sea is a symbol of vastness, limitlessness and constant activity. This theme to provide its visitors the best of both worlds.
@@ -88,43 +104,43 @@
             </div>
             <div style="background-color: #FFEEAD;padding: 20px;">
                 <div class="text-center">
-                    <h1>Events</h1>
+                    <h1 class="hideme">Events</h1>
                     <div class="row">
                         <div class="col-sm">
-                            <h2 class="mobile-heading">Technical</h2>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                            <h2 class="mobile-heading hideme">Technical</h2>
+                            <ul class="list-group list-group-flush ">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Dementia
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Debug
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Line Follower
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     RoboSoccer
                                 </li>
-                                <li class="list-group-item green" style="background-color: #96CEB4;">
+                                <li class="list-group-item green hideme" style="background-color: #96CEB4;">
                                     <a href="events.html">view all events</a>
                                 </li>
                             </ul>
 
-                            <h2 class="mobile-heading">Cultural</h2>
+                            <h2 class="mobile-heading hideme">Cultural</h2>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Synchronians
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Exodia Idol
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     Game Of Street
                                 </li>
-                                <li class="list-group-item green mobile-text" style="background-color: #96CEB4;">
+                                <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;">
                                     BandSlam
                                 </li>
-                                <li class="list-group-item green" style="background-color: #96CEB4;">
+                                <li class="list-group-item green hideme" style="background-color: #96CEB4;">
                                     <a href="events.html">view all events</a>
                                 </li>
                             </ul>
@@ -134,36 +150,62 @@
             </div>
             <div style="background-color: #96CEB4;padding: 20px;">
                 <div class="text-center">
-                    <h1>Sponsors</h1>
-                    <div id="spon_carousel" class="spon_carousel slide text-center" data-ride="carousel" data-wrap="true" data-interval="3000">
-                        <div class="carousel-inner" id="spon_carousel_inner">
-                        </div>
+                    <h1 class="hideme">Sponsors</h1>
+                    <div class="sponsors-list">
+                        <img src="brands/spon (0).png" class="hideme" alt="">
+                        <img src="brands/spon (1).png" class="hideme" alt="">
+                        <img src="brands/spon (2).png" class="hideme" alt="">
+                        <img src="brands/spon (3).png" class="hideme" alt="">
+                        <img src="brands/spon (4).png" class="hideme" alt="">
+                        <img src="brands/spon (5).png" class="hideme" alt="">
+                        <img src="brands/spon (6).png" class="hideme" alt="">
+                        <img src="brands/spon (7).png" class="hideme" alt="">
+                        <img src="brands/spon (8).png" class="hideme" alt="">
+                        <img src="brands/spon (9).png" class="hideme" alt="">
+                        <img src="brands/spon (10).png" class="hideme" alt="">
+                        <img src="brands/spon (11).png" class="hideme" alt="">
+                        <img src="brands/spon (12).png" class="hideme" alt="">
+                        <img src="brands/spon (13).png" class="hideme" alt="">
+                        <img src="brands/spon (14).png" class="hideme" alt="">
+                        <img src="brands/spon (15).png" class="hideme" alt="">
+                        <img src="brands/spon (16).png" class="hideme" alt="">
+                        <img src="brands/spon (17).png" class="hideme" alt="">
+                        <img src="brands/spon (18).png" class="hideme" alt="">
+                        <img src="brands/spon (19).png" class="hideme" alt="">
+                        <img src="brands/spon (20).png" class="hideme" alt="">
+                        <img src="brands/spon (21).png" class="hideme" alt="">
+                        <img src="brands/spon (22).png" class="hideme" alt="">
+                        <img src="brands/spon (23).png" class="hideme" alt="">
+                        <img src="brands/spon (24).png" class="hideme" alt="">
+                        <img src="brands/spon (25).png" class="hideme" alt="">
+                        <img src="brands/spon (26).png" class="hideme" alt="">
+
                     </div>
                 </div> 
             </div>
             <div class="team" style="background-color: #FFEEAD;padding: 20px;">
                 <div class="text-center">
-                    <h1>Team</h1>
+                    <h1 class="hideme">Team</h1>
                 </div>
                 <div class="row m">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3 team-card">
-                        <h4 class="text-center name">Convenor</h4>
-                        <img src="team/vaibhav.jpg" class="team-member" alt="">
-                        <h5 class="text-center mobile-text">Vaibhav Mongia</h5>
+                        <h4 class="text-center name hideme">Convenor</h4>
+                        <img src="team/vaibhav.jpg" class="team-member hideme" alt="">
+                        <h5 class="text-center mobile-text hideme">Vaibhav Mongia</h5>
                     </div>
                     <div class="col-sm-1"></div>
                     <div class="col-sm-3 team-card">
-                        <h4 class="text-center name">Sponsorship Team</h3>
-                            <img src="team/khyati.jpg" class="team-member" alt="">
-                        <h5 class="text-center mobile-text">Khyati</h5>
+                        <h4 class="text-center name hideme">Sponsorship Team</h3>
+                            <img src="team/khyati.jpg" class="team-member hideme" alt="">
+                        <h5 class="text-center mobile-text hideme">Khyati</h5>
                     </div>
                 </div>
                 <div class="row more">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8 ">
                         <p class="text-center" style="padding: 3%;">
-                            <a href="team.html" class="text-center">More</a>
+                            <a href="team.html" class="text-center hideme">More</a>
                         </p>
                     </div>
                 </div>

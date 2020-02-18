@@ -667,3 +667,19 @@ navigation h4:hover {
     .mobilehidden {
         display: none;
     }
+
+
+
+.hideme
+{
+    opacity:0;
+}
+
+.sponsors-list {
+    padding: 5%;
+}
+
+.sponsors-list img{
+    padding: 5%;
+    width: 75%;
+}
