@@ -157,12 +157,9 @@ h1 {
 .about-text {
     margin-top: 5%;
     font-size: 1.5vw;
-    font-family: 'Montserrat', cursive;
-
 }
 
 .container {
-    min-height: 100vh;
     padding: 0;
     margin: 0;
     display: block;
@@ -188,14 +185,6 @@ img {
 .team-card {
     border-radius: 0%;
     position: relative;
-    padding: 0 !important;
-}
-
-@media only screen and (max-width: 600px) {
-    .team-card {
-        padding: 0;
-        margin: 0;
-    }
 }
 
 .event-card {
@@ -205,13 +194,6 @@ img {
     padding: 0 !important;
     background-color: black;
     height: 70vh;
-}
-
-@media only screen and (max-width: 600px){
-    .event-card img {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
 }
 
 .event-card img {
@@ -414,12 +396,6 @@ navigation h4:hover {
     padding: 0;
 }
 
-@media only screen and (max-width: 600px){
-    .mycard_spon img {
-        width: 30px;
-    }
-}
-
 .card_text h4 {
     font-family: LemonJelly;
     font-size: 4em;
@@ -476,19 +452,6 @@ navigation h4:hover {
 .event-card:hover .top {
     opacity: 1;
 }
-
-@media only screen and (max-width: 600px) {
-    .event-card:hover .middle {
-        opacity: 1;
-    }
-    .event-card:hover .bottom {
-        opacity: 1;
-    }
-    .event-card:hover .top {
-        opacity: 1;
-    }
-}
-
 .text {
     font-family: LemonJelly;
     background-color:none;
@@ -541,35 +504,35 @@ navigation h4:hover {
 
 
 #fb {
-    background-image: url('./icons/fb.png');
+    background-image: url(./renders/fb.png);
 }
 
 #tw {
-    background-image: url('./icons/tw.png');
+    background-image: url(./renders/tw.png);
 }
 
 #rd {
-    background-image: url('./icons/rd.png');
+    background-image: url(./renders/rd.png);
 }
 
 #yt {
-    background-image: url('./icons/yt.png');
+    background-image: url(./renders/yt.png);
 }
 
 #fb:hover {
-    background-image: url('./icons/fbc.png');
+    background-image: url(./renders/fbc.png);
 }
 
 #tw:hover {
-    background-image: url('./icons/twc.png');
+    background-image: url(./renders/twc.png);
 }
 
 #rd:hover {
-    background-image: url('./icons/rdc.png');
+    background-image: url(./renders/rdc.png);
 }
 
 #yt:hover {
-    background-image: url('./icons/ytc.png');
+    background-image: url(./renders/ytc.png);
 }
 
 .icons img {
@@ -597,6 +560,7 @@ navigation h4:hover {
 
 .foot-icon-right img{
     margin-right: 6%;
+<<<<<<< HEAD
 }
 
 .mobile-text {
@@ -738,3 +702,6 @@ navigation h4:hover {
     from {opacity: .4} 
     to {opacity: 1}
   }
+=======
+}
+>>>>>>> 4a4de5a06f92f704ad55666dc0e67d2dfbd0df33
