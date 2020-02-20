@@ -199,8 +199,11 @@ img {
 }
 
 .event-card {
-    height: 70vh;
+    height: 60vh;
+    /* margin: 0 !important; */
     padding: 0 !important;
+    margin-right: 3% !important;
+    margin-left: 3% !important;
 }
 .overlay {
     position: absolute; 
@@ -261,12 +264,9 @@ img {
     text-align: justify;
   }
 
-@media only screen and (max-width: 600px){
-    .event-card img {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-}
+  .about-content a {
+      color: aliceblue;
+  }
 
 .footer {
     font-size: 1em !important;

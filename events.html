@@ -18,16 +18,18 @@
 </head>
 
 <body style="background-color: #FFEEAD;">
-    <script>
-    if (screen.width <= 700) {
-        document.location = "mevents.html";
-    }
-   </script>
+    
     <div class="preloader" id="preloader">
         <div id="sun">&nbsp;</div>
         <img id="cloud1" src="renders/melon.png" alt="">
         <img id="cloud2" src="renders/float.png" alt="">
     </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('preloader');
+            x.remove();
+        }
+       </script>
     <div class="pos-f-t fixed-top" id="navigation">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
@@ -59,9 +61,9 @@
         <h3 class="heading-form">Technical</h3>
     </div>
     <div class="row m">
-        <div class="col-sm-4 event-card">
+        <div class="col-sm-3 event-card">
             <h2 class="text-center" style="width: 100%; background-color: #343A40;">Dementia</h2>
-            <img src="cult/dementia1.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <img src="cult/dementia1.jpg" alt="" style="object-fit: cover;height: 100%;">
             <div class="overlay">
                 <div class="club-event">
                     Programming Club
@@ -69,419 +71,850 @@
                 <div class="fees-event">
                     Fees: ₹ 500
                 </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="pdf/Dementia.pdf">
+                        View Rules
+                    </a>
+                </div>
                 <div class="about-content">
                     Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
                 </div>
                 <div class="register-button">
-                    Register
+                    <a href="register.html">
+                        Register
+                    </a>
                 </div>
+            </div>
         </div>
-
-        </div>
-        <div class="col-sm-4 event-card">
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Debug</h2>
             <img src="cult/debug-1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Debug</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/D3bug.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="pdf/D3bug.pdf">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi debug is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Line Follower</h2>
             <img src="cult/line.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">LineFollower</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Line_Follower-converted (1).pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+            <div class="overlay">
+                <div class="club-event">
+                    Robotronics Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="pdf/Line_Follower-converted (1).pdf">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi Line is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/robosoccer.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">RoboSoccer</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Robosoccer(final).pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Robo Soccer</h2>
+            <img src="cult/robosoccer.jpg" alt="" style="object-fit: cover;height:  100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Robotronics Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi robo is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Fury Road</h2>
             <img src="cult/fury_road.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">FuryRoad</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/FURY ROAD_Ex.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/junkyard.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">JunkyardWars</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Junkyard_War.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/nitro.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">NitroRacing</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Nitro_Car.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+            <div class="overlay">
+                <div class="club-event">
+                    Robotronics Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi Fury is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/cadathon.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Cadathon</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Exodia 2k20 Cadathon.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/craneOMania.jpeg" alt="" style="object-fit: cover;height: 100%;">
-
-            <div class="top">
-                <div class="heading-event">CraneOMania</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/crane-o-mania.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/cad-1.jpg" alt="" style="object-fit: cover;height: 100%;">
-
-            <div class="top">
-                <div class="heading-event">Cad-X</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Junkyard Wars</h2>
+            <img src="cult/junkyardwars.jpeg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Robotronics Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi junkyard is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/quizzar-1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Quizaar</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Quizzar 2020.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/zenith.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Zenith</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/Zenith_Horizon 2020.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/auction1-min.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">IPL</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/IPL Auction RuleBook.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Nitro Racing</h2>
+            <img src="cult/nitro.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Yantrik Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi yantrik is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Disrupt</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/disrupt.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Technical</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Cadathon</h2>
+            <img src="cult/cadathon.png" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Yantik Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        
-
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Crane-O-Mania</h2>
+            <img src="cult/craneOMania.jpeg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Cad-X</h2>
+            <img src="cult/cad-1.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Quizzar</h2>
+            <img src="cult/quizzar-1.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Zenith</h2>
+            <img src="cult/zenith.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">IPL Auction</h2>
+            <img src="cult/auction1-min.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Disrupt</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="text-center" style="margin-bottom: 5%;">
         <h3 class="heading-form">Cultural</h3>
     </div>
     <div class="row m" style="margin-bottom: 5%;">
-        <div class="col-sm-4 event-card">
-            <img src="cult/sync1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Synchronians</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/exodia_idol.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">ExodiaIdol</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/street.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">GameOfStreet</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Synchronians</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Dance Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/band.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">BandSlam</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/groove fanatics.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">GrooveFanatics</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/rap.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">RapBattle</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Exodia Idol</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Music Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/pair.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">PairOnStage</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/gustaakhSaale.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">StreetPlay</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/monoact1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">MonoAct</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Game Of Street</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Dance Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/stage.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">StagePlay</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/canvas1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Canvas</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/sketching.jpeg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">LineSketching</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Band Slam</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/face-2.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">FacePainting</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/doodle2.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Doodle</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/potrait1.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">PortraitPhotography</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Groove Fanatics</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="renders/street.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">StreetPhotography</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/photographer.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">PhotoHunt</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
-            </div>
-        </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/advertisement.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">AdvertisementMaking</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Rap Battle</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/photoshop.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">ArtOfPhotoshop</div>
-            </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
-            </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Pair on Stage</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="col-sm-4 event-card">
-            <img src="cult/couture.jpg" alt="" style="object-fit: cover;height: 100%;">
-            <div class="top">
-                <div class="heading-event">Couture</div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Street Play</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
-            <div class="middle">
-                <a href="pdf/CADx.pdf"><div class="text">View Rules</div></a>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Mono Act</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
-            <div class="bottom">
-                <div class="text">Cultural</div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Stage Play</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Canvas</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Line Sketching</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Face Painting</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Doodle</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Portrait Photography</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Street Photography</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Photo Hunt</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Advertisement Making</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Art of Photoshop</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;height: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%; background-color: #343A40;">Couture</h2>
+            <img src="cult/disrupt.jpg" alt="" style="object-fit: cover;width: 100%;">
+            <div class="overlay">
+                <div class="club-event">
+                    Programming Club
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 500
+                </div>
+                <div class="about-content" style="text-align: center;">
+                    <a href="events/Dementia.png">
+                        View Rules
+                    </a>
+                </div>
+                <div class="about-content">
+                    Hi dementia is an event of inteleectuals where you go to compete everyone in this wrold
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
             </div>
         </div>
 
