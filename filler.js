@@ -1,29 +1,26 @@
 var events = [
-    "Dementia",
-    "Rap Battle",
-    "RoboSoccer",
-    "Band Slam",
-    "Canvas",
     "Crane-o mania",
+    "Robosoccor",
+    "Dementia",
+    "Band Slam",
+    "Canvas Painting",
     "Couture",
-    "IPL Auction",
-]
+    "Rap Battle"]
 
 var event_about = {
-    "IPL Auction": "lorem ipsum sit dolores",
-    "crane-o mania": "somethong lorem ipsum sit dolores",
-    "RoboSoccer": "somethong lorem ipsum sit dolores",
-    "Dementia": "somethong lorem ipsum sit dolores",
-    "Band Slam": "somethong lorem ipsum sit dolores",
-    "Canvas": "somethong lorem ipsum sit dolores",
-    "Couture": "somethong lorem ipsum sit dolores",
-    "Rap Battle": "somethong lorem ipsum sit dolores"
+    "Crane-o mania": "Interested in building stuff? Come and take part in Our Event and create a Tower-Crane and test its power and reach of your Crane!",
+    "Robosoccor":"Playing footbaal is easy but making your Robots do the same is difficult! So, acerpt the challenge and take part in Roboscoccor.",
+    "Dementia": "Do you like to challenge yourself? Here comes the programming competition. Do take part and compete with students from all over India.",
+    "Band Slam": "Music is a language that doesnot speak in particular words, it speaks in emotions! The artists, the echo of their assonances and the beauty of their voices receive a platform to persist in the hearts.",
+    "Canvas Painting": "Imaginations are Thoughts! Give a face to your Imagination by painting them, take part in Exodia's Canvas Painting..",
+    "Couture":"Fashion is a art of daily life! Showcase your Fashion skills and Designs in Couture - The Fashion Hub of Exodia.",
+    "Rap Battle": "Battles are not always fought with arms! Some battles are fought with words and emotions and a Rap Battle is something not less than a War."
 }
 
 function filleventcards(eventarr){
-    var str = '<div class="carousel-item active"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[0] + '.png" class="col d-block" alt="..."><div class="col text-right card_text"><h4>' + eventarr[0] + '</h4><p>' + event_about[eventarr[0]] + '</p></div></div></div></div> ';
+    var str = '<div class="carousel-item active"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[0] + '.png" id="rounded" class="col d-block" alt="Server Unable To load the image"><div class="col text-center card_text"><h4>' + eventarr[0] + '</h4><p>' + event_about[eventarr[0]] + '</p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> ';
     for (i = 1; i < eventarr.length; i++) {
-        str += '<div class="carousel-item"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[i] + '.png" class="col d-block" alt="..."><div class="col text-right card_text"><h4>' + eventarr[i] + '</h4><p>' + event_about[eventarr[i]] + '</p></div></div></div></div> '; 
+        str += '<div class="carousel-item"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[i] + '.png" id="rounded" class="col d-block" alt="Server Unable to load the image"><div class="col text-center card_text"><h4>' + eventarr[i] + '</h4><p>' + event_about[eventarr[i]] + '</p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> '; 
     };
     return str;
     // <div class="carousel-item active">
@@ -33,6 +30,9 @@ function filleventcards(eventarr){
     //             <div class="col text-right card_text">
     //                 <h4>Event Name</h4>
     //                 <p>something about event</p>
+    //                 <div class='register-button'>
+    //                      <a href='register.html'></a>
+    //                 </div>
     //             </div>
     //         </div>
     //     </div>
