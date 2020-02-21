@@ -12,10 +12,20 @@ if ($conn->connect_error) {
 }
 
 $name = $_POST["name"];
+$name = htmlspecialchars($name);
+
 $college = $_POST["college"];
+$college = htmlspecialchars($college);
+
 $contingent_boys = $_POST["conti_b"];
+$contingent_boys = htmlspecialchars($contingent_boys);
+
 $contingent_girls = $_POST["conti_g"];
+$contingent_girls = htmlspecialchars($contingent_girls);
+
 $ph_no = $_POST["ph_no"];
+$ph_no = htmlspecialchars($ph_no);
+
 
 if (isset($_POST['day1'])) $day1 = "YES";
 else $day1 = "NO";
@@ -39,7 +49,7 @@ for ($x = 1; $x <= $no_events; $x++) {
 $sql = "INSERT INTO Registration (Name, College, Contingent_boys, Contingent_girls, Phone_no, Day1, Day2, Day3, Events) VALUES ('$name', '$college', $contingent_boys, $contingent_girls, $ph_no, '$day1', '$day2', '$day3', '$partic_events_str');";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    // echo "New record created successfully";
     echo "<script type='text/javascript'>document.location = 'index.html';</script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
