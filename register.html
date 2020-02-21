@@ -18,16 +18,17 @@
 </head>
 
 <body style="background-color: #FFEEAD;">
-   <script>
-        if (screen.width <= 700) {
-            document.location = "mregister.html";
-        }
-       </script> 
     <div class="preloader" id="preloader">
         <div id="sun">&nbsp;</div>
         <img id="cloud1" src="renders/melon.png" alt="">
         <img id="cloud2" src="renders/float.png" alt="">
     </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('preloader');
+            x.remove();
+        }
+    </script>
     <div class="pos-f-t fixed-top" id="navigation">
         <div class="collapse" id="navbarToggleExternalContent">
           <div class="bg-dark p-4">
@@ -97,7 +98,7 @@
                 </div>
                 <div class="col-sm-1"></div>
                 
-                <div class="col-sm-10 ">
+                <div class="col-sm-10" style="margin-left: 10%;">
                     <h3 class="heading-form">Select your accomodation</h3>
                     <div class="checkbox">
                         <label ><input type="checkbox" value="YES" name="day1"> Day 1</label>
@@ -110,70 +111,69 @@
                     </div>
                 </div>
             </div>
-            </div>
             <div class="row" style="margin-top: 5%;">
                 <div class="col-sm-1"></div>
                 <div class="col-sm-5" style="margin-left:20px;">
                     <h3 class="heading-form">Cultural</h3 >
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event1" value="YES"> band-slam</label>
+                        <label><input type="checkbox" name="event1" value="YES"> Synchronians</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event2" value="YES"> biggest liar</label>
+                        <label><input type="checkbox" name="event2" value="YES"> Exodia Idol</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event3" value="YES"> canvas painting</label>
+                        <label><input type="checkbox" name="event3" value="YES"> Game of Street</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event4" value="YES"> couture</label>
+                        <label><input type="checkbox" name="event4" value="YES"> Band Slam</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event5" value="YES"> creative writing</label>
+                        <label><input type="checkbox" name="event5" value="YES"> Groove Fanatics</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event6" value="YES"> exodia idol</label>
+                        <label><input type="checkbox" name="event6" value="YES"> Rap Battle</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event7" value="YES"> face painting</label>
+                        <label><input type="checkbox" name="event7" value="YES"> Pair on Stage</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event8" value="YES"> groove fanatics</label>
+                        <label><input type="checkbox" name="event8" value="YES"> Street Play</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event9" value="YES"> landscape photography</label>
+                        <label><input type="checkbox" name="event9" value="YES"> Mono Act</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event10" value="YES"> live sketching</label>
+                        <label><input type="checkbox" name="event10" value="YES"> Stage Play</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event11" value="YES"> mono act</label>
+                        <label><input type="checkbox" name="event11" value="YES"> Canvas</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event12" value="YES"> online doodle</label>
+                        <label><input type="checkbox" name="event12" value="YES"> Live Sketching</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event13" value="YES"> pace a patch</label>
+                        <label><input type="checkbox" name="event13" value="YES"> Face Painting</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event14" value="YES"> portrait photography</label>
+                        <label><input type="checkbox" name="event14" value="YES"> Portrait Photography</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event15" value="YES"> quizzing</label>
+                        <label><input type="checkbox" name="event15" value="YES"> Doodle</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event16" value="YES"> rap battle</label>
+                        <label><input type="checkbox" name="event16" value="YES"> Street Photography</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event17" value="YES"> street battle</label>
+                        <label><input type="checkbox" name="event17" value="YES"> Photo Hunt</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event18" value="YES"> street play</label>
+                        <label><input type="checkbox" name="event18" value="YES"> Advertisement Making</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event19" value="YES"> survivor</label>
+                        <label><input type="checkbox" name="event19" value="YES"> Art of Photoshop</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event20" value="YES"> synchronians</label>
+                        <label><input type="checkbox" name="event20" value="YES"> Couture</label>
                     </div>
                 </div>
                 <div class="col-sm-1"></div>
@@ -183,13 +183,13 @@
                         <label><input type="checkbox" name="event21" value="YES"> CAD-X</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event22" value="YES"> Conundrum</label>
+                        <label><input type="checkbox" name="event22" value="YES"> Line Follower</label>
                     </div>
                     <div class="checkbox disabled">
-                        <label><input type="checkbox" name="event23" value="YES"> debug</label>
+                        <label><input type="checkbox" name="event23" value="YES"> Debug</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" name="event24" value="YES"> dementia</label>
+                        <label><input type="checkbox" name="event24" value="YES"> Dementia</label>
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox" name="event25" value="YES"> drone</label>
@@ -222,7 +222,7 @@
 
                 </div>
                 <div class="col-sm-2"></div>
-                <div class="col-sm-6" style="margin:5%">
+                <div class="col-sm-6" style="padding:5% !important;">
                     <button class="btn btn-rounded btn-block mysubmit" type="submit">SUBMIT</button>
                 </div>
 
