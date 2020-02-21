@@ -188,7 +188,11 @@ img {
 .team-card {
     border-radius: 0%;
     position: relative;
-    padding: 3% !important;
+    box-shadow: -4px 4px 4px 2px black;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.068);
+    padding: 5% !important  ;
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -208,6 +212,7 @@ img {
     margin-left: 3% !important;
     background:red;
     overflow: hidden;
+    box-shadow: 0 10px 10px 10px black;
 }
 .overlay {
     position: absolute; 
