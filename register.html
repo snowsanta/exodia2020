@@ -55,8 +55,15 @@
     <form action="server.php" method="POST">
         <div class="container">
             <div class="text-center">
-                <h1 style="padding-top:10%;">Register</h1>
+                <h1 id="heading_of_page" style="padding-top:10%;">Register</h1>
             </div>
+            <script>
+                if (screen.width <= 700) {
+                    var x = document.getElementById('heading_of_page');
+                    x.style.paddingTop = "20%";
+                    x.style.marginBottom = "5%"
+                }
+            </script>
             <div class="row">
 
                 <div class="col-sm-12" style="margin-bottom: 5%;">
@@ -72,6 +79,13 @@
                             <span class="input-group-text">College</span>
                         </div>
                         <input id="msg" type="text" class="form-control" name="college" placeholder="college" required>
+                    </div>
+
+                    <div class="input-group mb-3" >
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Email Id</span>
+                        </div>
+                        <input id="msg" type="email" class="form-control" name="email" placeholder="email id" required>
                     </div>
 
                     <div class="input-group mb-3" >
