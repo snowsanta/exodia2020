@@ -17,7 +17,9 @@ body::-webkit-scrollbar {
     width: .4em;
     background: rgba(0, 0, 0, 0);
 }
-
+#rounded{
+    border-radius:2em;
+}
 body::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, .5);
     outline: 2px solid slategrey;
@@ -255,12 +257,14 @@ img {
   }
 
   .register-button {
-      padding: 2.5%;
-      font-family: BeautyMountains;
+    padding: 2.5%;
+    font-family: BeautyMountains;
     font-size: 2vh;
     background-color: var(--head-col);
     border-radius: 3%;
     margin: 2.5%;
+    text-align: center;
+    border-radius:4em;
   }
 
   .register-button a{
@@ -430,7 +434,10 @@ navigation h4:hover {
 } */
 
 .event_carousel {
-    width: 60%;
+    position:relative;
+    right:20%;
+
+    width: 95%;
     min-height: 100%;
     left: 35%;
     margin-top: 10%;
