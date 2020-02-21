@@ -54,9 +54,16 @@
 
 
 
-    <div class="text-center" style="padding-bottom: 5%;padding-top:15%; background-image: url(renders/events); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
+    <div class="text-center" id="heading_of_page" style="padding-bottom: 5%;padding-top:15%; background-image: url(renders/events); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
         <h1 style="color: red;">Events</h1>
     </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('heading_of_page');
+            x.style.paddingTop = "20%";
+            x.style.marginBottom = "5%"
+        }
+    </script>
     <div class="text-center" style="margin-bottom: 5%;">
         <h3 class="heading-form">Technical</h3>
     </div>
@@ -417,9 +424,17 @@
     </div>
     </div>
 
-    <div class="text-center" style="padding-top: 5%;padding-bottom: 5%;margin-bottom:5%;background: url('renders/band-bg.jpg');background-attachment: fixed;">
+    <div class="text-center" id="cultural_heading" style="padding-top: 5%;padding-bottom: 5%;margin-bottom:5%;background: url('renders/band-bg.jpg');background-attachment: fixed;">
         <h3 class="heading-form">Cultural</h3>
     </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('cultural_heading');
+            x.style.paddingTop = "20%";
+            x.style.paddingBottom = "20%";
+            x.style.marginBottom = "5%"
+        }
+    </script>
     <div class="container-fluid">
     <div class="row" style="margin-bottom: 5%;">
         <div class="col-sm-3 event-card">

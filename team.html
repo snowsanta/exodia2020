@@ -51,9 +51,15 @@
         </nav>
       </div>
 
-        <div class="text-center" style="margin-bottom: 5%;padding-top: 5%;">
+        <div class="text-center" id="heading_of_page" style="margin-bottom: 5%;padding-top: 5%;">
             <h1>Team</h1>
         </div>
+        <script>
+            if (screen.width <= 700) {
+                var x = document.getElementById('heading_of_page');
+                x.style.paddingTop = "20%";
+            }
+           </script>
         <div class="text-center" style="margin-bottom: 5%;">
             <h3 class="heading-form">Convenor</h3>
         </div>
