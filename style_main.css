@@ -206,6 +206,8 @@ img {
     margin-top: 3% !important;
     margin-bottom: 3% !important;
     margin-left: 3% !important;
+    background:red;
+    overflow: hidden;
 }
 .overlay {
     position: absolute; 
@@ -221,9 +223,9 @@ img {
     transform: translateY(100%);
     text-align: center;
   }
-  
+
   .event-card:hover .overlay {
-    opacity: 1;
+    opacity:1;
     transform: translateY(0);
   }
 
