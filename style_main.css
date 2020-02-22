@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
     font-family: BeautyMountains;
     src: url('./fonts/BeautyMountains.ttf');
 }
@@ -94,6 +94,182 @@ body {
     width: 100%;
     overflow: hidden;
 }
+@import "compass/css3";
+
+// Global
+body {
+  background-color: #f2f1ed;
+}
+
+.wrap {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 310px;  
+}
+
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+// Variables
+$lato: 'Lato';
+
+// Title
+h1 {  
+  margin-bottom: 60px;
+  text-align: center;
+  font: 300 2.25em $lato;
+  text-transform: uppercase;
+  
+  strong {
+    font-weight: 400;
+    color: #ea4c4c;
+  }  
+}
+
+h2 {
+  margin-bottom: 80px;  
+  text-align: center;  
+  font: 300 0.7em $lato; 
+  text-transform: uppercase;  
+  
+  strong {    
+    font-weight: 400;   
+  }
+}
+
+// Countdown
+.countdown {
+  width: 720px;
+  margin: 0 auto;
+
+  .bloc-time {
+    float: left;    
+    margin-right: 45px;    
+    text-align: center;    
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .count-title {
+    display: block;
+    margin-bottom: 15px;
+    font: normal 0.94em $lato;
+    color: #1a1a1a;
+    text-transform: uppercase;
+  }
+
+  .figure {
+    position: relative;
+    float: left;
+    height: 110px;
+    width: 100px;
+    margin-right: 10px;
+    background-color: #fff;
+    border-radius: 8px; 
+    @include box-shadow(0 3px 4px 0 rgba(0, 0, 0, .2),inset 2px 4px 0 0 rgba(255, 255, 255, .08));
+
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    >span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      font: normal 5.94em/107px $lato;
+      font-weight: 700;
+      color: #de4848;
+    }
+
+    .top, .bottom-back {    
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+      }
+    }
+
+    .top {
+      z-index: 3;
+      background-color: #f7f7f7;
+      transform-origin: 50% 100%;
+      -webkit-transform-origin: 50% 100%; 
+      @include border-top-radius(10px); 
+      @include transform(perspective(200px));
+    }
+
+    .bottom {  
+      z-index: 1;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        display: block; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background-color: rgba(0, 0, 0, .02);
+      }
+    }
+
+    .bottom-back {
+      z-index: 2;
+      top: 0;
+      height: 50%;
+      overflow: hidden;    
+      background-color: #f7f7f7;
+      @include border-top-radius(10px);
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+
+    .top, .top-back {
+      height: 50%;
+      overflow: hidden;
+      @include backface-visibility(hidden);
+    }
+
+    .top-back {
+      z-index: 4;
+      bottom: 0;
+      background-color: #fff;
+      -webkit-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      @include transform(perspective(200px) rotateX(180deg));
+      @include border-bottom-radius(10px); 
+
+      span {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+}
+
 
 div {
     font-family: cursive;
@@ -172,6 +348,68 @@ img {
     position: relative;
     max-width: 100%;
 }
+.tree1  {
+    transform-origin: 70% 150% !important;
+    transform:  rotate(5deg) !important;
+    animation: drift1 7s ease infinite !important;
+	
+}
+.tree2  {
+    transform-origin: 60% 50% !important;
+    transform:  rotate(5deg) !important;
+    animation: drift2 7s ease infinite !important;
+	
+}
+@keyframes drift2 {
+  0%, 100% {
+    transform: translateX(-10%) translateY(-50%) rotate(5deg);
+  }
+  50% {
+    transform: translateX(-20%) translateY(-50%) rotate(-2deg);
+  }
+}
+@keyframes drift1 {
+  0%, 100% {
+    transform: translateX(-10%) translateY(-50%) rotateZ(-5deg) rotateY(180deg);
+  }
+  50% {
+    transform: translateX(-20%) translateY(-50%) rotateZ(2deg) rotateY(180deg);
+  }
+}
+.a{
+	
+	text-align:center;
+}
+.count-down{
+	background-color:#414953;
+	padding:5%;
+	top:70vh;
+	position:relative;
+	font-family:BeautyMountains;
+	
+}
+.btn{
+	background-color:#E62059 !important ;
+	align:center;
+	float:center;
+	left:70px;
+	border: 1px solid #fff !important;
+	padding: 10px 30px;
+	color: #000;
+	text-decoration:none;
+	border-radius: 100% !important;
+    padding: 8% 8% !important;
+    box-shadow: -1px 0px 13px black;
+	margin:1%;
+	font-family:cursive;
+}
+
+
+.btn a {
+	font-size:6px;
+	
+	
+}
 
 .green {
     background-color: #FFEEAD !important;
@@ -193,7 +431,7 @@ img {
     border-radius: 5%;
     background-color: rgba(0, 0, 0, 0.01);
     padding: 2% !important  ;
-
+    margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -397,11 +635,18 @@ navigation img {
     z-index: 11;
     width: 10%;
     animation: sign ease 1s infinite alternate;
+	&.scrollUp
+    top: -80vh;
 }
 
 navigation img:hover {
     transition: ease 0.2s;
     top: -8vh;
+}
+
+navigation img:[data-scroll='50px'] {
+	transition: ease 0.2s;
+    top: 80vh;
 }
 
 navigation h4 {
@@ -844,3 +1089,26 @@ navigation h4:hover {
     from {opacity: .4} 
     to {opacity: 1}
   }
+  
+  .sliding-middle-out {
+    display: inline-block;
+    border-radius: 24px;
+    position: relative;
+    padding-bottom: 3px;
+}
+.sliding-middle-out:after {
+    content: '';
+    display: block;
+    margin: auto;
+    border-radius: 24px;
+    margin-top: 5px;
+    height: 7px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+.sliding-middle-out:hover:after {
+    width: 100%;
+    background: rgb(255,111,105);
+}
+	

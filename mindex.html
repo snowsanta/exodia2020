@@ -77,18 +77,26 @@
         </nav>
     </div>
     <div class="landing" style="padding: 0;margin: 0; background-color: #414953;height: -webkit-fill-available;position: relative;overflow-x: hidden;overflow-x: hidden;">
-        <img src="renders/al_coco_left.png" alt=""
+        <img class="tree1" src="renders/al_coco_left.png" alt=""
             style="margin: 0;position: absolute;top: 50%;transform: translateY(-50%) rotateY(180deg);right: 0;opacity: 0.5;">
-        <img src="renders/al_coco_left.png" alt=""
+        <img class="tree2" src="renders/al_coco_left.png" alt=""
             style="margin: 0;position: absolute;top: 50%;transform: translateY(-50%);opacity: 0.5;">
         <div class="text-center"
             style="position: absolute;top: 50%;transform: translateY(-50%) translateX(-50%);left: 50%;">
             <img src="renders/logo_white.png" alt="" style="transform: scale(2);">
         </div>
-        <div class="countdown">
-            
-        </div>
+        <div class="count-down">
+		<div class="a">
+		<a href="#" class="btn" id="days" >DAYS</a>
+		<a href="#" class="btn" id="hours">HOURS</a>
+		<a href="#" class="btn" id="mins">MINUTES</a>
+		<br><br><br>
+		</div>
+	</div>
     </div>
+	
+	<script src="count-down.js">
+	</script>
     <div style="background-color: #FFEEAD;padding: 10%;min-height: 100vh;position: relative;overflow-x: hidden;">
         <img src="./renders/float.png" alt="" class="float">
         <div class="text-center">
@@ -304,6 +312,7 @@ window.addEventListener("orientationchange", function() {
 });
 
     </script>
+	<script type="text/javascript" src="new3.js"></script>
 </body>
 
 </html>
