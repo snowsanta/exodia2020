@@ -35,8 +35,8 @@
 .ice{
     position: absolute;
     border-radius: 10%;
-    width: calc(var(--vh, 1vh) * 7);
-    height: calc(var(--vh, 1vh) * 7);
+    width: calc(var(--vh, 1vh) * 5);
+    height: calc(var(--vh, 1vh) * 5);
     background-color: var(--green);
     animation: ice_anim ease-in-out 1.5s infinite alternate;
     top: 0;
