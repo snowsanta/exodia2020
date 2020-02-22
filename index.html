@@ -10,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="icon" href="renders/logo.png">
@@ -33,10 +32,10 @@
         <img id="cloud2" src="renders/float.png" alt="">
     </div>
     <navigation>
-        <a href="index.html"><img src="renders/home_sign.png" style="left:10%;" alt=""></a>
-        <a href="events.html"><img src="renders/events_sign.png" style="left:20%;" alt=""></a>
-        <a href="team.html"><img src="renders/team_sign.png" style="right: 10%;" alt=""></a>
-        <a href="register.html"><img src="renders/register_sign.png" style="right:20%;" alt=""></a>
+        <a href="index.html"><img src="renders/home_sign.png" style="left:1%;" alt=""></a>
+        <a href="events.html"><img src="renders/events_sign.png" style="left:12%;" alt=""></a>
+        <a href="team.html"><img src="renders/team_sign.png" style="left: 23%;" alt=""></a>
+        <a href="register.html"><img src="renders/register_sign.png" style="left:34%;" alt=""></a>
     </navigation>
     <div class="canv" id="can_div">
         <canvas class="canvas_layer" id="canv" style="position: absolute; left: 0; top: 0; z-index: 0;">
@@ -172,12 +171,15 @@
                     <div class="col-sm foot-logo">
                         <img src="renders/logo.png" alt="">
                     </div>
-                    <div class="col-sm" style="padding: 10px;width: 100%;">
-                        <a href="https://www.facebook.com/Exodia.IITMandi/" class="icon-footer"><img src="renders/fbc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
-                        <a href="https://www.instagram.com/exodia.in/" class="icon-footer"><img src="renders/insc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
-                        <a href="https://www.facebook.com/Exodia.IITMandi/" class="icon-footer"><img src="renders/twc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
-                        <a href="https://www.youtube.com/watch?v=WU_8wcNML3M" class="icon-footer"><img src="renders/ytc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
+                    <div class="col-sm text-center icon-wrap">
+                        <div class="icons">
+                            <a id="fb" href="https://www.facebook.com/Exodia.IITMandi/" title="Like Our Page 👍"></a>
+                            <a id="tw" href="https://www.instagram.com/exodia.in/" title="Twitter"> </a>
+                            <a id="rd" href="https://www.facebook.com/Exodia.IITMandi/" title="Follow us ❤"></a>
+                            <a id="yt" href="https://www.youtube.com/watch?v=WU_8wcNML3" title="Youtube"></a>
+                          </div>
                     </div>
+
                     <div class="col-sm">
                         <ul class="list-group list-group-flush w-75 foot-icon-right">
                             <li class="list-group-item" style="background-color:#414953;">
@@ -198,6 +200,7 @@
         </div>
     </div>
     <script src="./script.js"></script>
+    <script src="./drawcanvas.js"></script>
     <script src="./filler.js"></script>
 </body>
 

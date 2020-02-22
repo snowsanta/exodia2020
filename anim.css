@@ -2,50 +2,62 @@
     --head-col: #FF6F69;
     --card-head: #FFCC5C;
     --yellow: #FFEEAD;
+    --green: #96CEB4;
 }
 
 .float{
     position: absolute;
-    width: 35%;
+    width: 80%;
     opacity: .3;
-    top: 40%;
-    left: 60%;
+    top: 50%;
+    left: 50%;
     animation: float ease-in-out 2s infinite alternate;
 }
 
 .ball{
     position: absolute;
-    width: 40%;
+    width: 90%;
     opacity: .3;
-    top: 30%;
-    left: -15%;
+    top: 40%;
+    left: -5%;
     animation: ball ease-in 1.5s infinite alternate;
+}
+
+.lemonade{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform-origin:bottom right;
+    transform: scale(1.7);
+    opacity: .5;
 }
 
 .ice{
     position: absolute;
-    width: 5vw;
-    height: 5vw;
     border-radius: 10%;
-    background-color: var(--yellow);
+    width: calc(var(--vh, 1vh) * 7);
+    height: calc(var(--vh, 1vh) * 7);
+    background-color: var(--green);
     animation: ice_anim ease-in-out 1.5s infinite alternate;
+    top: 0;
+    transform: rotate(69deg);
 }
 
 .i1{
-    top: 63%;
-    left: 120%;
+    top: 77%;
+    left: 75%;
 }
 
 .i2{
-    top: 79%;
-    left: 115%;
-    animation-delay: .7s;
+    top: 80%;
+    left: 89%;
+    animation-delay: .5s;
 }
 
 .i3{
-    top: 82%;
-    left: 127%;
-    animation-delay: .99s;
+    top: 87%;
+    left: 80%;
+    animation-delay: .9s;
 }
 
 

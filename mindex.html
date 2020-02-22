@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="icon" href="renders/logo.png">
     <link rel="stylesheet" href="preloader.css">
+    <link rel="stylesheet" href="anim.css">
     <title>Exodia - This time for tropical</title>
     <style>
         body,
@@ -72,8 +73,7 @@
             </button>
         </nav>
     </div>
-    <div class="landing" style="padding: 0;margin: 0; background-color: #414953;height: -webkit-fill-available;">
-        <!-- <img src="renders/forage_dark.png" alt="" style="height: 80vh;margin: 0;position: absolute;top: 0;opacity: 0.4;"> -->
+    <div class="landing" style="padding: 0;margin: 0; background-color: #414953;height: -webkit-fill-available;position: relative;">
         <img src="renders/al_coco_left.png" alt=""
             style="margin: 0;position: absolute;top: 50%;transform: translateY(-50%) rotateY(180deg);right: 0;opacity: 0.5;">
         <img src="renders/al_coco_left.png" alt=""
@@ -83,11 +83,11 @@
             <img src="renders/logo_white.png" alt="" style="transform: scale(2);">
         </div>
         <div class="countdown">
-
+            
         </div>
-        <!-- <img src="renders/lemonade_sill.png" alt="" style="position: absolute;bottom: 0; opacity: 0.4;">  -->
     </div>
-    <div style="background-color: #FFEEAD;padding: 10%;min-height: 100vh;">
+    <div style="background-color: #FFEEAD;padding: 10%;min-height: 100vh;position: relative;">
+        <img src="./renders/float.png" alt="" class="float">
         <div class="text-center">
             <h1 class="hideme">About us</h1>
         </div>
@@ -100,7 +100,8 @@
             present Exodia 2020.
         </p>
     </div>
-    <div style="background-color: #96CEB4;padding: 10%;min-height: 100vh;">
+    <div style="background-color: #96CEB4;padding: 10%;min-height: 100vh;position: relative;">
+        <img src="./renders/ball.png" alt="" class="ball">
         <div class="text-center">
             <h1 class="hideme">Theme</h1>
         </div>
@@ -119,168 +120,45 @@
             </div>
         </div>
     </div>
-    <div style="background-color: #FFEEAD;padding: 20px;">
+    <div style="background-color: #FFEEAD;padding: 20px;position: relative;">
         <div class="text-center">
             <h1 class="hideme">Events</h1>
-            <div class="row">
-                <div class="col-sm">
-                    <h2 class="mobile-heading hideme">Technical</h2>
-                    <ul class="list-group list-group-flush ">
-                        <a href="events.html">
-                            <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;color: black;">
-                                Dementia
-                            </li>
-                        </a>
-                        <a href="events.html">
-                            <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;color: black;">
-                                Debug
-                            </li>
-                        </a>
-                        <a href="events.html">
-                            <li class="list-group-item green hideme" style="background-color: #96CEB4;">
-                                view all events
-                            </li>
-                        </a>
-                    </ul>
-
-                    <h2 class="mobile-heading hideme">Cultural</h2>
-                    <ul class="list-group list-group-flush">
-                        <a href="events.html">
-                            <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;color: black;">
-                                Synchronians
-                            </li>
-                        </a>
-                        <a href="events.html">
-                            <li class="list-group-item green mobile-text hideme" style="background-color: #96CEB4;color: black;">
-                                Exodia Idol
-                            </li>
-                        </a>
-
-                        <li class="list-group-item green hideme" style="background-color: #96CEB4;">
-                            <a href="events.html">view all events</a>
-                        </li>
-                    </ul>
+        </div>
+        <div class="row">
+            <div id="event_carousel_mob" class="event_carousel_mob slide" data-ride="carousel" data-wrap="true" data-interval="5000">
+                <div class="carousel-inner" id="event_carousel_inner_mob">
                 </div>
             </div>
         </div>
     </div>
-    <div style="background-color: #96CEB4;padding: 20px;height: 100vh;">
+    <div style="background-color: #96CEB4;padding: 20px;height: 100vh;position: relative;">
         <div class="text-center">
             <h1 class="hideme">Sponsors</h1>
-            <div class="sponsors-list">
-                <div class="slideshow-container">
-
-                    <div class="mySlides fade">
-                        <img src="spon/aasiyana decor.png">
+            <div id="spon_carousel_mob" class="spon_carousel_mob slide text-center mt-4" data-ride="carousel" data-wrap="true" data-interval="5000">
+                <div class="carousel-inner" id="spon_carousel_inner_mob">
+                    <div class="carousel-item active">
+                        <div class="mycard_spon_mob">
+                            <div class="spon_elem">
+                                <img src="./brands/spon (0).png" alt="">
+                            </div>
+                            <div class="spon_elem">
+                                <img src="./brands/spon (0).png" alt="">
+                            </div>
+                            <div class="spon_elem">
+                                <img src="./brands/spon (0).png" alt="">
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/Aimcoindia.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/AMERICAN INSTITUTE OF SPOKEN ENGLISH.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/ashoka furniture.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/beardo-3.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/BIO-RAD.png">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="spon/catalyst.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/ClearTrail.png">
-                    </div>
-
-                    <div class="mySlides fade">
-                        <img src="spon/cortex solutions.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/Daily Dose Cafe.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/ENTUPLE.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/feeniks.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/HBR Ascend.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/ieee.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/internshalalogo.png">
-                    </div>
-                    <div class="mySlides1 fade">
-                        <img src="spon/made easy.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/maruti_colours.png">
-                    </div>
-
-                    <div class="mySlides1 fade">
-                        <img src="spon/NBCC.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/obtuze solution.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/orane international.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/paras udyog.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/PNB.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/R Sons.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/research aid.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/SBI.png">
-                    </div>
-                    <div class="mySlides2 fade">
-                        <img src="spon/sjvn.png">
-                    </div>
-
-                    <div class="mySlides2 fade">
-                        <img src="spon/stage.png">
-                    </div>
-
                 </div>
-
             </div>
         </div>
+        <img src="./renders/lemonade_sill.png" alt="" class="lemonade">
+        <div class="ice i1"></div>
+        <div class="ice i2"></div>
+        <div class="ice i3"></div>
+        
     </div>
-    <div class="team" style="background-color: #FFEEAD;padding: 20px;">
+    <div class="team" style="background-color: #FFEEAD;padding: 20px;position: relative;">
         <div class="text-center">
             <h1 class="hideme">Team</h1>
         </div>
@@ -347,28 +225,75 @@
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
     <script>
-        var slideIndex = 0;
-        showSlides();
+        window.addEventListener('load', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            document.getElementById("spon_carousel_inner_mob").innerHTML = fillsponcards(27);
+            document.getElementById("event_carousel_inner_mob").innerHTML = filleventcards(events);
+        })
 
-        function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var slides1 = document.getElementsByClassName("mySlides1");
-            var slides2 = document.getElementsByClassName("mySlides2");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                slides1[i].style.display = "none";
-                slides2[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            slides1[slideIndex - 1].style.display = "block";
-            slides2[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        function fillsponcards(a){
+            var str = '<div class="carousel-item active"><div class="mycard_spon_mob"><div class="spon_elem"><img src="./brands/spon (0).png" alt=""></div><div class="spon_elem"><img src="./brands/spon (1).png" alt=""></div><div class="spon_elem"><img src="./brands/spon (2).png" alt=""></div></div></div>';
+            
+            for (i = 1; i < a/3; i++) {
+            str += '<div class="carousel-item"><div class="mycard_spon_mob"><div class="spon_elem"><img src="./brands/spon (' + String((i*3) + 0) + ').png" alt=""></div><div class="spon_elem"><img src="./brands/spon (' + String((i*3) + 1) + ').png" alt=""></div><div class="spon_elem"><img src="./brands/spon (' + String((i*3) + 2) + ').png" alt=""></div></div></div>';
         }
+        return str;
+
+        // <div class="mycard_spon_mob">
+        //     <div class="spon_elem">
+        //         <img src="./brands/spon (0).png" alt="">
+        //     </div>
+        //     <div class="spon_elem">
+        //         <img src="./brands/spon (0).png" alt="">
+        //     </div>
+        //     <div class="spon_elem">
+        //         <img src="./brands/spon (0).png" alt="">
+        //     </div>
+        // </div>
+    }
+
+    var events = [
+    "Crane-o mania",
+    "Robosoccor",
+    "Dementia",
+    "Band Slam",
+    "Canvas Painting",
+    "Couture",
+    "Rap Battle"]
+
+var event_about = {
+    "Crane-o mania": "Interested in building stuff? Come and take part in Our Event and create a Tower-Crane and test its power and reach of your Crane!",
+    "Robosoccor":"Playing footbaal is easy but making your Robots do the same is difficult! So, acerpt the challenge and take part in Roboscoccor.",
+    "Dementia": "Do you like to challenge yourself? Here comes the programming competition. Do take part and compete with students from all over India.",
+    "Band Slam": "Music is a language that doesnot speak in particular words, it speaks in emotions! The artists, the echo of their assonances and the beauty of their voices receive a platform to persist in the hearts.",
+    "Canvas Painting": "Imaginations are Thoughts! Give a face to your Imagination by painting them, take part in Exodia's Canvas Painting..",
+    "Couture":"Fashion is a art of daily life! Showcase your Fashion skills and Designs in Couture - The Fashion Hub of Exodia.",
+    "Rap Battle": "Battles are not always fought with arms! Some battles are fought with words and emotions and a Rap Battle is something not less than a War."
+}
+
+function filleventcards(eventarr){
+    var str = '<div class="carousel-item active"><div class="row"><div class="mycard_mob"><div class="cardimgwrap"><img src="./events/' + eventarr[0] + '.png" alt="Server Unable To load the image"></div><div class="col text-center card_text"><h4>' + eventarr[0] + '</h4><p>' + event_about[eventarr[0]] + '</p><p><a href="events.html">View All</a></p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> ';
+    for (i = 1; i < eventarr.length; i++) {
+        str += '<div class="carousel-item"><div class="row justify-content-center"><div class="mycard_mob"><div class="cardimgwrap"><img src="./events/' + eventarr[i] + '.png" class="col d-block" alt="Server Unable to load the image"></div><div class="col text-center card_text"><h4>' + eventarr[i] + '</h4><p>' + event_about[eventarr[i]] + '</p><p><a href="events.html">View All</a></p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> '; 
+    };
+    return str;
+    // <div class="carousel-item active">
+    //     <div class="row justify-content-center">
+    //         <div class="row w-75 mycard">
+    //             <img src="./brands/PNB.png" class="col d-block" alt="...">
+    //             <div class="col text-right card_text">
+    //                 <h4>Event Name</h4>
+    //                 <p>something about event</p>
+    //                 <div class='register-button'>
+    //                      <a href='register.html'></a>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    // </div>
+}
     </script>
 </body>
 
