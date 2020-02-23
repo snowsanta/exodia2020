@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style_main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="icon" href="renders/logo.png">
+    <link rel="stylesheet" href="preloader.css">
+    <!-- <link rel="stylesheet" href="team.css"> -->
+    <title>Exodia - This time for tropical</title>
+</head>
+
+<body style="background-color: #FFCC5C;">
+    
+    <div class="preloader" id="preloader">
+        <div id="sun">&nbsp;</div>
+        <img id="cloud1" src="renders/melon.png" alt="">
+        <img id="cloud2" src="renders/float.png" alt="">
+    </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('preloader');
+            x.remove();
+        }
+       </script>
+    <div class="pos-f-t fixed-top" id="navigation">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <a href="index.html"><h4 class="text-white">Home</h4></a>
+          </div>
+          <div class="bg-dark p-4">
+            <a href="events.html"><h4 class="text-white">Events</h4></a>
+          </div>
+          <div class="bg-dark p-4">
+           <a href="team.html"> <h4 class="text-white">Team</h4></a>
+          </div>
+          <div class="bg-dark p-4">
+            <a href="workshopevents.html"> <h4 class="text-white">Workshops</h4></a>
+           </div>
+           <div class="bg-dark p-4">
+            <a href="register.html"> <h4 class="text-white">Register</h4></a>
+           </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div>
+
+
+
+    <div class="text-center" id="heading_of_page" style="padding-bottom: 5%;padding-top:15%; background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(workshop1.jpeg); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
+        <h1 style="color: rgb(255, 111, 105);">WorkShop</h1>
+    </div>
+    <script>
+        if (screen.width <= 700) {
+            var x = document.getElementById('heading_of_page');
+            x.style.paddingTop = "20%";
+            x.style.marginBottom = "5%"
+        }
+    </script>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 event-card">
+            <div class='rohan'>
+                <h2 class="text-center" style="width: 100%;">Internet Of Things</h2>
+                <img src="renders/iot.jpg" alt="" style="object-fit: cover;">
+            </div>
+            <div class="overlay">
+                <div class="club-event">
+                    IOT - Internet Of Things
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 1200/-
+                </div>
+                <div class="text-center" style="font-family: sans-serif !important;font-size: 1.5rem;">
+                    For More details contact: <br>
+                    Raman Soni: 9461406697
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%;">AI-ML</h2>
+            <img src="renders/ai.jpg" alt="" style="object-fit: cover;">
+            <div class="overlay">
+                <div class="club-event">
+                    Artificial Intelligence <br>
+                    Machine Learning 
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 1200/-
+                </div>
+                <div class="text-center" style="font-family: sans-serif !important;font-size: 1.5rem;">
+                    For More details contact: <br>
+                    Raman Soni: 9461406697
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 event-card">
+            <h2 class="text-center" style="width: 100%;">Bionic Works</h2>
+            <img src="renders/bionic_works.jpg" alt="" style="object-fit: cover;">
+            <div class="overlay">
+                <div class="club-event">
+                    Bionic Works
+                </div>
+                <div class="fees-event">
+                    Fees: ₹ 1200/-
+                </div>
+                <div class="text-center" style="font-family: sans-serif !important;font-size: 1.5rem;">
+                    For More details contact: <br>
+                    Raman Soni: 9461406697
+                </div>
+                <div class="register-button">
+                    <a href="register.html">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+
+    
+    
+    <div class="footer" style="background-color:#414953;">
+        <div class="container-fluid">
+        <div class="row b-0">
+            <div class="col-sm foot-logo">
+                <img src="renders/logo.png" alt="">
+            </div>
+            <div class="col-sm" style="padding: 10px;width: 100%;">
+                <a href="https://www.facebook.com/Exodia.IITMandi/" class="icon-footer"><img src="renders/fbc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
+                <a href="https://www.instagram.com/exodia.in/" class="icon-footer"><img src="renders/insc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
+                <a href="https://www.facebook.com/Exodia.IITMandi/" class="icon-footer"><img src="renders/twc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
+                <a href="https://www.youtube.com/watch?v=WU_8wcNML3M" class="icon-footer"><img src="renders/ytc.png" style="width: 23%;padding: 5%;border-radius: 100%;"></a>
+            </div>
+            <div class="col-sm">
+                <ul class="list-group list-group-flush w-75 foot-icon-right">
+                    <li class="list-group-item" style="background-color:#414953;">
+                        <img src="renders/phone.png" alt="">+91 91690 49219</li>
+                    <a href="mailto:publicity@exodia.in"><li class="list-group-item" style="background-color:#414953;">
+                        <img src="renders/mail.png" alt="">Contact Us
+                    </li></a>
+                    <a href="https://goo.gl/maps/yqX5aLFQzRX7sRQw9"><li class="list-group-item" style="background-color:#414953;">
+                        <img src="renders/address.png" alt="">IIT MANDI, H.P.
+                    </li></a>
+                    <a href="mailto:sponsors@exodia.in"><li class="list-group-item" style="background-color:#414953;">
+                        <img src="renders/mail.png" alt="">Sponsor Us
+                    </li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--footer start -->
+    <script src="./script.js"></script>
+</body>
+
+</html>

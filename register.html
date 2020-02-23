@@ -31,25 +31,40 @@
     </script>
     <div class="pos-f-t fixed-top" id="navigation">
         <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-dark p-4">
-            <a href="index.html"><h4 class="text-white">Home</h4></a>
-          </div>
-          <div class="bg-dark p-4">
-            <a href="events.html"><h4 class="text-white">Events</h4></a>
-          </div>
-          <div class="bg-dark p-4">
-           <a href="team.html"> <h4 class="text-white">Team</h4></a>
-          </div>
-          <div class="bg-dark p-4">
-           <a href="register.html"> <h4 class="text-white">Register</h4></a>
-          </div>
+            <div class="bg-dark p-4">
+                <a href="index.html">
+                    <h4 class="text-white">Home</h4>
+                </a>
+            </div>
+            <div class="bg-dark p-4">
+                <a href="events.html">
+                    <h4 class="text-white">Events</h4>
+                </a>
+            </div>
+            <div class="bg-dark p-4">
+                <a href="team.html">
+                    <h4 class="text-white">Team</h4>
+                </a>
+            </div>
+            <div class="bg-dark p-4">
+                <a href="workshopevents.html">
+                    <h4 class="text-white">Workshops</h4>
+                </a>
+            </div>
+            <div class="bg-dark p-4">
+                <a href="register.html">
+                    <h4 class="text-white">Register</h4>
+                </a>
+            </div>
         </div>
         <nav class="navbar navbar-dark bg-dark">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </nav>
-      </div>
+    </div>
 
     <!-- register page -->
     <form action="server.php" method="POST">
@@ -67,55 +82,56 @@
             <div class="row">
 
                 <div class="col-sm-12" style="margin-bottom: 5%;">
-                    <div class="input-group mb-3" >
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Name</span>
                         </div>
                         <input id="msg" type="text" class="form-control" name="name" placeholder="name" required>
                     </div>
-                    
-                    <div class="input-group mb-3" >
+
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">College</span>
                         </div>
                         <input id="msg" type="text" class="form-control" name="college" placeholder="college" required>
                     </div>
 
-                    <div class="input-group mb-3" >
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Email Id</span>
                         </div>
                         <input id="msg" type="email" class="form-control" name="email" placeholder="email id" required>
                     </div>
 
-                    <div class="input-group mb-3" >
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">No. of boys</span>
                         </div>
                         <input id="msg" type="number" class="form-control" name="conti_b" placeholder="number of boys"
                             required>
                     </div>
-                    <div class="input-group mb-3" >
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">No. of girls</span>
                         </div>
                         <input id="msg" type="number" class="form-control" name="conti_g" placeholder="number of girls"
                             required>
                     </div>
-                    <div class="input-group mb-3" >
+                    <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Contingent contact</span>
                         </div>
-                        <input id="msg" type="number" class="form-control" name="ph_no" placeholder="Kindly provide a number to reach to you. This number will be validated further"
+                        <input id="msg" type="number" class="form-control" name="ph_no"
+                            placeholder="Kindly provide a number to reach to you. This number will be validated further"
                             required>
                     </div>
                 </div>
                 <div class="col-sm-1"></div>
-                
+
                 <div class="col-sm-10" style="margin-left: 10%;">
                     <h3 class="heading-form">Select your accomodation</h3>
                     <div class="checkbox">
-                        <label ><input type="checkbox" value="YES" name="day1"> Day 1</label>
+                        <label><input type="checkbox" value="YES" name="day1"> Day 1</label>
                     </div>
                     <div class="checkbox">
                         <label><input type="checkbox" value="YES" name="day2"> Day 2</label>
@@ -126,9 +142,9 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 5%;">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-5" style="margin-left:20px;">
-                    <h3 class="heading-form">Cultural</h3 >
+                <!-- <div class="col-sm-1"></div> -->
+                <div class="col-sm-4">
+                    <h3 class="heading-form">Cultural</h3>
                     <div class="checkbox">
                         <label><input type="checkbox" name="event1" value="YES"> Synchronians</label>
                     </div>
@@ -190,8 +206,7 @@
                         <label><input type="checkbox" name="event20" value="YES"> Couture</label>
                     </div>
                 </div>
-                <div class="col-sm-1"></div>
-                <div class="col-sm-4" style="margin-left:20px">
+                <div class="col-sm-4">
                     <h3 class="heading-form">Technical</h3>
                     <div class="checkbox">
                         <label><input type="checkbox" name="event21" value="YES"> Dementia</label>
@@ -235,16 +250,30 @@
                     <div class="checkbox">
                         <label><input type="checkbox" name="event33" value="YES"> Disrupt</label>
                     </div>
-
-
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="event34" value="YES"> India Quiz</label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="event35" value="YES"> Sports Quiz</label>
+                    </div>
                 </div>
-                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <h3 class="heading-form">Workshop</h3>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="event36" value="YES"> IoT </label>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" name="event37" value="YES"> AI/ML Workshop</label>
+                    </div>
+                    <div class="checkbox disabled">
+                        <label><input type="checkbox" name="event38" value="YES"> Bionic Works</label>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="padding:5% !important;">
                     <button class="btn btn-rounded btn-block mysubmit" type="submit">SUBMIT</button>
                 </div>
-
             </div>
-
         </div>
     </form>
     <!-- register page -->
@@ -253,4 +282,5 @@
     <script src="./script.js"></script>
     <script src="./filler.js"></script>
 </body>
+
 </html>

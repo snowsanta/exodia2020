@@ -11,10 +11,10 @@ var event_about = {
     "Crane-o mania": "Interested in building stuff? Come and take part in Our Event and create a Tower-Crane and test its power and reach of your Crane!",
     "Robosoccor":"Playing footbaal is easy but making your Robots do the same is difficult! So, acerpt the challenge and take part in Roboscoccor.",
     "Dementia": "Do you like to challenge yourself? Here comes the programming competition. Do take part and compete with students from all over India.",
-    "Band Slam": "Music is a language that doesnot speak in particular words, it speaks in emotions! The artists, the echo of their assonances and the beauty of their voices receive a platform to persist in the hearts.",
-    "Canvas Painting": "Imaginations are Thoughts! Give a face to your Imagination by painting them, take part in Exodia's Canvas Painting..",
+    "Band Slam": "Music is a language that doesnot speak in particular words, it speaks in emotions!",
+    "Canvas Painting": "Imaginations are Thoughts! Give a face to your Imagination by painting them...",
     "Couture":"Fashion is a art of daily life! Showcase your Fashion skills and Designs in Couture - The Fashion Hub of Exodia.",
-    "Rap Battle": "Battles are not always fought with arms! Some battles are fought with words and emotions and a Rap Battle is something not less than a War."
+    "Rap Battle": "Battles are not always fought with arms! Some battles are fought with words and emotions."
 }
 
 function filleventcards(eventarr){

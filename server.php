@@ -38,8 +38,8 @@ if (isset($_POST['day3'])) $day3 = "YES";
 else $day3 = "NO";
 
 
-$no_events = 33; // enter number of events
-$events_list = array("band-slam", "biggest liar", "canvas painting", "couture", "creative writing", "exodia idol", "face painting", "groove fanatics", 'landscape photography', 'live sketching', 'mono act', 'online doodle', 'pace a patch', 'portrait photography', 'quizzing', 'rap battle', 'street battle', 'street play', 'survivor', 'synchronians', 'CAD-X', 'Conundrum', 'debug', 'dementia', 'drone', 'ipl', 'junkyard', 'line follower', 'nitro racing', 'qiuzzar', 'robowar', 'viaduct', 'zenith'); // enter events names 
+$no_events = 38; // enter number of events
+$events_list = array("band-slam", "biggest liar", "canvas painting", "couture", "creative writing", "exodia idol", "face painting", "groove fanatics", 'landscape photography', 'live sketching', 'mono act', 'online doodle', 'pace a patch', 'portrait photography', 'quizzing', 'rap battle', 'street battle', 'street play', 'survivor', 'synchronians', 'CAD-X', 'Conundrum', 'debug', 'dementia', 'drone', 'ipl', 'junkyard', 'line follower', 'nitro racing', 'qiuzzar', 'robowar', 'viaduct', 'zenith', 'india_quiz', 'sports_quiz', 'iot', 'ai_ml', 'bionic_works'); // enter events names 
 
 $partic_events_str = "";
 
