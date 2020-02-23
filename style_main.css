@@ -209,13 +209,17 @@ img {
 	font-family:BeautyMountains;
 
 }
+
+#days {
+    margin-left: 6%;
+}
 .sp{
 	background-color:#E62059 !important ;
 	text-align:center;
 	float:center;
 	left:70px;
 	border: 1px solid #fff !important;
-	padding: 10px 30px;
+	padding: 0px 30px !important;
 	color: #000;
 	text-decoration:none;
 	border-radius: 100% !important;
