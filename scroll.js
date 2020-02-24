@@ -4,13 +4,13 @@ $(document).ready(function(){
         $('#navigation').removeClass('hidden')
     }
     window.onscroll = function(){
-        if (this.window.pageYOffset >=640){
-            $('navigation').addClass('hidden')
-            $('#navigation').removeClass('hidden')
+        if (this.window.pageYOffset >=660){
+            $('navigation').fadeOut(500)
+            $('#navigation').fadeIn(500)
         }
         else{
-            $('navigation').removeClass('hidden');
-            $('#navigation').addClass('hidden')
+            $('navigation').fadeIn(500);
+            $('#navigation').fadeOut(500);
         }
     }
 })
