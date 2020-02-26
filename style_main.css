@@ -187,30 +187,28 @@ img {
 }
 @keyframes drift2 {
   0%, 100% {
-    transform: translateX(-10%) translateY(0%) rotate(5deg);
+    transform: translateX(-10%) translateY(-50%) rotate(5deg);
   }
   50% {
-    transform: translateX(-20%) translateY(0%) rotate(-2deg);
+    transform: translateX(-20%) translateY(-50%) rotate(-2deg);
   }
 }
 @keyframes drift1 {
   0%, 100% {
-    transform: translateX(-10%) translateY(0%) rotateZ(-5deg) rotateY(180deg);
+    transform: translateX(-10%) translateY(-50%) rotateZ(-5deg) rotateY(180deg);
   }
   50% {
-    transform: translateX(-20%) translateY(0%) rotateZ(2deg) rotateY(180deg);
+    transform: translateX(-20%) translateY(-50%) rotateZ(2deg) rotateY(180deg);
   }
 }
 .count-down{
-    background-color:#414953 !important;
-    height:30vh !important;
-    
-	/* padding:5%;
+	background-color:#41495300;
+	padding:5%;
     top:67vh;
     height:23vh;
 	position:relative;
 	font-family:BeautyMountains;
-    */
+   
 }
 .hidden{
     display:none;
