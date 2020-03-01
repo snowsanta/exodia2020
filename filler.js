@@ -1,5 +1,5 @@
 var events = [
-    "Crane-o mania",
+    "Viaduct",
     "Robosoccor",
     "Dementia",
     "Band Slam",
@@ -8,7 +8,7 @@ var events = [
     "Rap Battle"]
 
 var event_about = {
-    "Crane-o mania": "Interested in building stuff? Come and take part in Our Event and create a Tower-Crane and test its power and reach of your Crane!",
+    "Viaduct": "Interested in building stuff? Come and take part in Our Event and create a Tower-Crane and test its power and reach of your Crane!",
     "Robosoccor":"Playing footbaal is easy but making your Robots do the same is difficult! So, acerpt the challenge and take part in Roboscoccor.",
     "Dementia": "Do you like to challenge yourself? Here comes the programming competition. Do take part and compete with students from all over India.",
     "Band Slam": "Music is a language that doesnot speak in particular words, it speaks in emotions!",

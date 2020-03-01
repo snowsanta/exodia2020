@@ -39,7 +39,7 @@ else $day3 = "NO";
 
 
 $no_events = 39; // enter number of events
-$events_list = array("Synchronians", "Exodia Idol", "Game of Street", "Band Slam", "Groove Fanatics", "Rap Battle", "Pair on Stage", "Street Play", 'Mono Act', 'Stage Play', 'Canvas', 'Live Sketching', 'Face Painting', 'Portrait Photography', 'Doodle', 'Street Photography', 'Photo Hunt', 'Advertisement Making', 'Art of Photoshop', 'Couture', 'Dementia', 'Debug', 'Line Follower', 'Robo Soccer', 'Fury Road', 'Junkyard Wars', 'Nitro Racing', 'Cadathon', 'Crane-o-Mania', 'Cad-X', 'Quizzar', 'Zenith', 'IPL Auction', 'Disrupt', 'India Quiz', 'Sports Quiz','iot workshop', 'ai_ml workshop', 'bionic_works workshop'); // enter events names 
+$events_list = array("Synchronians", "Exodia Idol", "Game of Street", "Band Slam", "Groove Fanatics", "Rap Battle", "Pair on Stage", "Street Play", 'Mono Act', 'Stage Play', 'Canvas', 'Live Sketching', 'Face Painting', 'Portrait Photography', 'Doodle', 'Street Photography', 'Photo Hunt', 'Advertisement Making', 'Art of Photoshop', 'Couture', 'Dementia', 'Debug', 'Line Follower', 'Robo Soccer', 'Fury Road', 'Junkyard Wars', 'Nitro Racing', 'Cadathon', 'Viaduct', 'Cad-X', 'Quizzar', 'Zenith', 'IPL Auction', 'Disrupt', 'India Quiz', 'Sports Quiz','iot workshop', 'ai_ml workshop', 'bionic_works workshop'); // enter events names 
 
 $partic_events_str = "";
 
