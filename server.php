@@ -42,18 +42,40 @@ $no_events = 39; // enter number of events
 $events_list = array("Synchronians", "Exodia Idol", "Game of Street", "Band Slam", "Groove Fanatics", "Rap Battle", "Pair on Stage", "Street Play", 'Mono Act', 'Stage Play', 'Canvas', 'Live Sketching', 'Face Painting', 'Portrait Photography', 'Doodle', 'Street Photography', 'Photo Hunt', 'Advertisement Making', 'Art of Photoshop', 'Couture', 'Dementia', 'Debug', 'Line Follower', 'Robo Soccer', 'Fury Road', 'Junkyard Wars', 'Nitro Racing', 'Cadathon', 'Crane-o-Mania', 'Cad-X', 'Quizzar', 'Zenith', 'IPL Auction', 'Disrupt', 'India Quiz', 'Sports Quiz','iot workshop', 'ai_ml workshop', 'bionic_works workshop'); // enter events names 
 
 $partic_events_str = "";
+$counter=0;
 
 for ($x = 1; $x <= $no_events; $x++) {
-    if ($_POST[sprintf("event%u", $x)] == "YES") {
-        $partic_events_str  = $partic_events_str . " " . $events_list[$x - 1];
+    if($_POST[sprintf("event%u", $x)] == "YES" && $_POST[sprintf("eventcount%u", $x)] == "")
+    {
+        echo "<script type='text/javascript'>
+        alert('Your Registration was Failed Kindly fill the team sizes properly');
+        document.location = 'register.html';
+        </script>";
     }
+    if($_POST[sprintf("event%u", $x)] == "YES")
+    {
+        $counter+=(int)$_POST[sprintf("eventcount%u", $x)];
+    }
+    if ($_POST[sprintf("event%u", $x)] == "YES") {
+        $partic_events_str  = $partic_events_str . ", " . $events_list[$x - 1] . "-->" . $_POST[sprintf("eventcount%u", $x)];
+    }
+}
+
+if($counter != (int)$contingent_boys + (int)$contingent_girls){
+    echo "<script type='text/javascript'>
+        alert('Your Registration was FAILED. Make sure the team entries sums up to total number of boys and girls in the contingent');
+        document.location = 'register.html';
+        </script>";
 }
 
 $sql = "INSERT INTO Registration (Name, College, Contingent_boys, Contingent_girls, Phone_no, Day1, Day2, Day3, Events, email) VALUES ('$name', '$college', $contingent_boys, $contingent_girls, $ph_no, '$day1', '$day2', '$day3', '$partic_events_str', '$email');";
 
 if ($conn->query($sql) === TRUE) {
     // echo "New record created successfully";
-    echo "<script type='text/javascript'>document.location = 'index.html';</script>";
+    echo "<script type='text/javascript'>
+        alert('Your Registration was Succesful');
+        document.location = 'index.html';
+    </script>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
