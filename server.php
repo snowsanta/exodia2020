@@ -48,7 +48,7 @@ for ($x = 1; $x <= $no_events; $x++) {
     if($_POST[sprintf("event%u", $x)] == "YES" && $_POST[sprintf("eventcount%u", $x)] == "")
     {
         echo "<script type='text/javascript'>
-        alert('Your Registration was Failed Kindly fill the team sizes properly');
+        alert('Your Registration was Failed Kindly fill the Number Of Teams properly');
         document.location = 'register.html';
         </script>";
     }
@@ -59,13 +59,6 @@ for ($x = 1; $x <= $no_events; $x++) {
     if ($_POST[sprintf("event%u", $x)] == "YES") {
         $partic_events_str  = $partic_events_str . ", " . $events_list[$x - 1] . "-->" . $_POST[sprintf("eventcount%u", $x)];
     }
-}
-
-if($counter != (int)$contingent_boys + (int)$contingent_girls){
-    echo "<script type='text/javascript'>
-        alert('Your Registration was FAILED. Make sure the team entries sums up to total number of boys and girls in the contingent');
-        document.location = 'register.html';
-        </script>";
 }
 
 $sql = "INSERT INTO Registration (Name, College, Contingent_boys, Contingent_girls, Phone_no, Day1, Day2, Day3, Events, email) VALUES ('$name', '$college', $contingent_boys, $contingent_girls, $ph_no, '$day1', '$day2', '$day3', '$partic_events_str', '$email');";
