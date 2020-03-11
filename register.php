@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,7 +75,7 @@
         style="padding-bottom: 5%;padding-top:15%;margin-bottom: 5%; background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(Registration.jpg); background-attachment: fixed; background-repeat: no-repeat;background-size: cover;">
         <h1 style="color: rgb(255, 111, 105);">Register</h1>
     </div>
-    <form action="server.php" method="POST">
+    <form method="POST">
         <div class="container">
             <script>
                 if (screen.width <= 700) {
@@ -405,8 +409,7 @@
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="padding:5% !important;padding-bottom: 0 !important">
-                    <button class="btn btn-block mysubmit payment_button" type="submit" formaction="payment_portal.php"
-                        id='rounded' style="font-family: cursive;">Pay Now: ₹ 0/-</button>
+                    <button class="btn btn-block mysubmit payment_button" type="submit" formaction="payment_portal.php" formmethod="POST" id='rounded' style="font-family: cursive;">Pay Now: ₹ 0/-</button>
                 </div>
                 <div class="col-sm-3"></div>
                 <div class="col-sm-3"></div>

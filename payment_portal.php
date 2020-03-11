@@ -1,16 +1,5 @@
 <?php
-
-$servername = "localhost";
-$username = "login_exodia";
-$password = "password231099";
-$dbname = "myDB";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+session_start();
 
 $name = $_POST["name"];
 $name = htmlspecialchars($name);
@@ -18,15 +7,19 @@ $_SESSION['name'] = $name;
 
 $college = $_POST["college"];
 $college = htmlspecialchars($college);
+$_SESSION['college']=$college;
 
 $contingent_boys = $_POST["conti_b"];
 $contingent_boys = htmlspecialchars($contingent_boys);
+$_SESSION['contingent_boys']=$contingent_boys;
 
 $contingent_girls = $_POST["conti_g"];
 $contingent_girls = htmlspecialchars($contingent_girls);
+$_SESSION['contingent_girls']=$contingent_girls;
 
 $email = $_POST["email"];
 $email = htmlspecialchars($email);
+$_SESSION['email']=$email;
 
 $ph_no = $_POST["ph_no"];
 $ph_no = htmlspecialchars($ph_no);
@@ -34,13 +27,25 @@ $_SESSION['ph_no'] = $ph_no;
 
 $payment = 0;
 
+$day1=$day2=$day3="NO";
 
-if (isset($_POST['day1'])) $day1 = "YES";
-else $day1 = "NO";
-if (isset($_POST['day2'])) $day2 = "YES";
-else $day2 = "NO";
-if (isset($_POST['day3'])) $day3 = "YES";
-else $day3 = "NO";
+if (isset($_POST['day1'])) {
+    $day1 = "YES";
+    $_SESSION['day1']="YES";
+}
+else $_SESSION['day1']="NO";
+
+if (isset($_POST['day2'])) {
+    $day2 = "YES";
+    $_SESSION['day2']="YES";
+}
+else $_SESSION['day2']="NO";
+
+if (isset($_POST['day3'])) {
+    $day3 = "YES";
+    $_SESSION['day3']="YES";
+}
+else $_SESSION['day3']="NO";
 
 if ($day1 == "YES" && $day2 == "YES" && $day3 == "YES") $payment = 1300;
 else if (($day1 == "YES" && $day2 == "YES") || ($day3 == "YES" && $day2 == "YES") || $day1 == "YES" && $day3 == "YES") $payment = 1000;
@@ -71,9 +76,11 @@ for ($x = 1; $x <= $no_events; $x++) {
 }
 
 if($payment==0){
-    echo "<script>document.location='register.html';
-                alert('fill the registraion page first');</script>";
+    die("$payment;");
 }
+
+$_SESSION['payment']=$payment;
+$_SESSION['partic_events_str']=$partic_events_str;
 
 ?>
 <html lang="en">
@@ -145,15 +152,15 @@ if($payment==0){
         <h1 style="color: rgb(255, 111, 105);">Payment</h1>
     </div>
 
-    <form action="" method="POST">
+    <form action="payment_confirm.php" method="POST">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="padding:5% !important;padding-bottom: 5% !important">
-                    <button class="btn btn-block mysubmit" id='rounded' style="font-family: cursive;">Your Due payment: ₹ <?php echo "$payment" ?>/-</button>
+                    <p class="btn btn-block mysubmit" id='rounded' style="font-family: cursive;">Your Due payment: ₹<?php echo "$payment" ?>/-</p>
                 </div>
 
-                <div class="alert alert-primary alert-dismissible fade show col-sm-12">
+                <div class="alert alert-primary alert-dismissible fade show col-sm-12" style="margin: 10px;">
                     <h3>Note:</h3>
                     <p>
                         <strong>Step1: </strong> Kindly make the payment with following credentials:
@@ -181,6 +188,9 @@ if($payment==0){
                     <p>
                         <strong>Step2: </strong>Enter the reference number for the proof of the payment.
                     </p>
+                    <p>
+                        <strong>Step3: </strong>Your payment will will be verified by our team. In case of any doubts, feel free to contact us.
+                    </p>
                 </div>
 
                 <div class="col-sm-12" style="margin: 0 5% 0 0;">
@@ -188,7 +198,7 @@ if($payment==0){
                         <div class="input-group-prepend">
                             <span class="input-group-text">Reference number</span>
                         </div>
-                        <input id="msg" type="text" class="form-control" name="name" placeholder="Enter the reference number of the payment." required>
+                        <input id="msg" type="text" class="form-control" name="reference" placeholder="Enter the reference number of the payment." required>
                     </div>
                 </div>
 
@@ -196,7 +206,7 @@ if($payment==0){
 
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="padding:5% !important;padding-bottom: 0 !important">
-                    <button class="btn btn-block mysubmit payment_button" type="submit" formaction="payment_portal.php" id='rounded' style="font-family: cursive;">Submit payment</button>
+                    <button class="btn btn-block mysubmit payment_button" type="submit" formaction="payment_confirm.php" id='rounded' style="font-family: cursive;">Submit payment</button>
                 </div>
             </div>
         </div>
@@ -209,19 +219,3 @@ if($payment==0){
 
 </html>
 
-<?php
-
-$sql = "INSERT INTO Registration (Name, College, Contingent_boys, Contingent_girls, Phone_no, Day1, Day2, Day3, Events, email,payment,refrence_number) VALUES ('$name', '$college', $contingent_boys, $contingent_girls, $ph_no, '$day1', '$day2', '$day3', '$partic_events_str', '$email','$payment','$reference');";
-
-if ($conn->query($sql) === TRUE) {
-    // echo "New record created successfully";
-    echo "<script type='text/javascript'>
-        alert('Your Registration was Succesful');
-        document.location = 'index.html';
-    </script>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-$conn->close();
-
-?>
