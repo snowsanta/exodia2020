@@ -63,7 +63,7 @@ for ($x = 1; $x <= $no_events; $x++) {
     if ($_POST[sprintf("event%u", $x)] == "YES" && $_POST[sprintf("eventcount%u", $x)] == "") {
         echo "<script type='text/javascript'>
         alert('Your Registration was Failed Kindly fill the Number Of Teams properly');
-        document.location = 'register.html';
+        document.location = 'register.php';
         </script>";
     }
     if ($_POST[sprintf("event%u", $x)] == "YES") {
@@ -76,7 +76,10 @@ for ($x = 1; $x <= $no_events; $x++) {
 }
 
 if($payment==0){
-    die("$payment;");
+    echo "<script type='text/javascript'>
+        alert('Your Registration was Failed Kindly fill the Number Of Teams properly');
+        document.location = 'register.php';
+        </script>";
 }
 
 $_SESSION['payment']=$payment;
@@ -136,7 +139,7 @@ $_SESSION['partic_events_str']=$partic_events_str;
                 </a>
             </div>
             <div class="bg-dark p-4">
-                <a href="register.html">
+                <a href="register.php">
                     <h4 class="text-white">Register</h4>
                 </a>
             </div>
