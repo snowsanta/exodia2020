@@ -17,13 +17,13 @@ var x = setInterval(function() {
         }
     }
     if(accomodations[0].checked & accomodations[1].checked & accomodations[2].checked){
-        to_pay+=1300*(girl_count[0].value + boy_count[0].value);
+        to_pay+=1300*(girl_count[0].value) + 1300*(boy_count[0].value);
     }
     else if((accomodations[0].checked & accomodations[1].checked) | (accomodations[0].checked & accomodations[2].checked) | (accomodations[2].checked & accomodations[1].checked)){
-        to_pay+=1000*(girl_count[0].value + boy_count[0].value);
+        to_pay+=1000*(girl_count[0].value) + 1000*(boy_count[0].value);
     }
     else if(accomodations[0].checked | accomodations[1].checked | accomodations[2].checked){
-        to_pay+=600* (girl_count[0].value + boy_count[0].value);
+        to_pay+=600* (girl_count[0].value) + 600*(boy_count[0].value);
     }
     price.innerHTML = "Pay: ₹ "+to_pay +"/-";
 },100)
