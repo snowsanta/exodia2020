@@ -112,14 +112,14 @@ session_start();
                         <div class="input-group-prepend">
                             <span class="input-group-text">No. of boys</span>
                         </div>
-                        <input id="msg" type="number" class="form-control" name="conti_b" placeholder="number of boys"
+                        <input id="msg" type="number" class="form-control boy_count" name="conti_b" placeholder="number of boys"
                             required>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">No. of girls</span>
                         </div>
-                        <input id="msg" type="number" class="form-control" name="conti_g" placeholder="number of girls"
+                        <input id="msg" type="number" class="form-control girl_count" name="conti_g" placeholder="number of girls"
                             required>
                     </div>
                     <div class="input-group mb-3">

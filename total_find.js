@@ -4,6 +4,10 @@ var events = document.getElementsByClassName('event_checkbox');
 var price = document.getElementsByClassName('payment_button')[0];
 var team_sizes = document.getElementsByClassName('tentacles');
 var accomodations = document.getElementsByClassName('accomodation');
+var girl_count = document.getElementsByClassName('girl_count');
+var boy_count = document.getElementsByClassName('boy_count');
+
+
 
 var x = setInterval(function() {
     var to_pay =0;
@@ -13,13 +17,13 @@ var x = setInterval(function() {
         }
     }
     if(accomodations[0].checked & accomodations[1].checked & accomodations[2].checked){
-        to_pay+=1300;
+        to_pay+=1300*(girl_count[0].value + boy_count[0].value);
     }
     else if((accomodations[0].checked & accomodations[1].checked) | (accomodations[0].checked & accomodations[2].checked) | (accomodations[2].checked & accomodations[1].checked)){
-        to_pay+=1000;
+        to_pay+=1000*(girl_count[0].value + boy_count[0].value);
     }
     else if(accomodations[0].checked | accomodations[1].checked | accomodations[2].checked){
-        to_pay+=600;
+        to_pay+=600* (girl_count[0].value + boy_count[0].value);
     }
     price.innerHTML = "Pay: ₹ "+to_pay +"/-";
 },100)
