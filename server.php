@@ -49,7 +49,7 @@ for ($x = 1; $x <= $no_events; $x++) {
     {
         echo "<script type='text/javascript'>
         alert('Your Registration was Failed Kindly fill the Number Of Teams properly');
-        document.location = 'register.html';
+        document.location = 'register.php';
         </script>";
     }
     if($_POST[sprintf("event%u", $x)] == "YES")

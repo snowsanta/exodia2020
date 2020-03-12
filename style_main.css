@@ -965,3 +965,9 @@ navigation h4:hover {
     background:rgba(0,0,0,0.4);
 
   }
+
+  td{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      border-style: double;
+  }
