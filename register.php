@@ -56,7 +56,7 @@ session_start();
                 </a>
             </div>
             <div class="bg-dark p-4">
-                <a href="register.html">
+                <a href="register.php">
                     <h4 class="text-white">Register</h4>
                 </a>
             </div>
