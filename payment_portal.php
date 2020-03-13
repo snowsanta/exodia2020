@@ -47,9 +47,9 @@ if (isset($_POST['day3'])) {
 }
 else $_SESSION['day3']="NO";
 
-if ($day1 == "YES" && $day2 == "YES" && $day3 == "YES") $payment = 1300;
-else if (($day1 == "YES" && $day2 == "YES") || ($day3 == "YES" && $day2 == "YES") || $day1 == "YES" && $day3 == "YES") $payment = 1000;
-else if ($day1 == "YES" || $day2 == "YES" || $day3 == "YES") $payment = 600;
+if ($day1 == "YES" && $day2 == "YES" && $day3 == "YES") $payment = 1300*((int)$contingent_boys + (int)$contingent_girls);
+else if (($day1 == "YES" && $day2 == "YES") || ($day3 == "YES" && $day2 == "YES") || $day1 == "YES" && $day3 == "YES") $payment = 1000*((int)$contingent_boys + (int)$contingent_girls);
+else if ($day1 == "YES" || $day2 == "YES" || $day3 == "YES") $payment = 600*((int)$contingent_boys + (int)$contingent_girls);
 
 
 $no_events = 39; // enter number of events
