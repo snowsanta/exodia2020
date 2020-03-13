@@ -6,6 +6,10 @@ var team_sizes = document.getElementsByClassName('tentacles');
 var accomodations = document.getElementsByClassName('accomodation');
 var girl_count = document.getElementsByClassName('girl_count');
 var boy_count = document.getElementsByClassName('boy_count');
+var stage_play_count =  document.getElementsByName('eventcount10')
+var street_play_count = document.getElementsByName('eventcount8')
+var stage_play = document.getElementsByName('event10')
+var street_play = document.getElementsByName('event8')
 
 
 
@@ -24,6 +28,12 @@ var x = setInterval(function() {
     }
     else if(accomodations[0].checked | accomodations[1].checked | accomodations[2].checked){
         to_pay+=600* (girl_count[0].value) + 600*(boy_count[0].value);
+    }
+    if(stage_play[0].checked & street_play[0].checked & parseInt(stage_play_count[0].value)>0 & parseInt(street_play_count[0].value)>0){
+        if(parseInt(stage_play_count[0].value)<parseInt(street_play_count[0].value)){
+            to_pay-=parseInt(stage_play_count[0].value)*500
+        }
+        else to_pay-=parseInt(street_play_count[0].value)*500
     }
     price.innerHTML = "Pay: ₹ "+to_pay +"/-";
 },100)

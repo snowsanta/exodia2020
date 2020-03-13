@@ -75,6 +75,15 @@ for ($x = 1; $x <= $no_events; $x++) {
     }
 }
 
+if($_POST["event10"]=="YES" && $_POST["event8"]=="YES"){
+    if((int)$_POST["eventcount10"] < (int)$_POST["eventcount8"]){
+        $payment-=(int)$_POST['eventcount10']*500;
+    }
+    else{
+        $payment-=(int)$_POST['eventcount8']*500;
+    }
+}
+
 if($payment==0){
     echo "<script type='text/javascript'>
         alert('Your Registration was Failed Kindly fill the Number Of Teams properly');
