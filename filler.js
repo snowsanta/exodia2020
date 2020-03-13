@@ -18,9 +18,9 @@ var event_about = {
 }
 
 function filleventcards(eventarr){
-    var str = '<div class="carousel-item active"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[0] + '.png" id="rounded" class="col d-block" alt="Server Unable To load the image"><div class="col text-center card_text"><h4>' + eventarr[0] + '</h4><p>' + event_about[eventarr[0]] + '</p><p><a href="events.html">View All</a></p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> ';
+    var str = '<div class="carousel-item active"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[0] + '.png" id="rounded" class="col d-block" alt="Server Unable To load the image"><div class="col text-center card_text"><h4>' + eventarr[0] + '</h4><p>' + event_about[eventarr[0]] + '</p><p><a href="events.html">View All</a></p><div class="register-button"><a href="register.php">Register</a></div></div></div></div></div> ';
     for (i = 1; i < eventarr.length; i++) {
-        str += '<div class="carousel-item"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[i] + '.png" id="rounded" class="col d-block" alt="Server Unable to load the image"><div class="col text-center card_text"><h4>' + eventarr[i] + '</h4><p>' + event_about[eventarr[i]] + '</p><div class="register-button"><a href="register.html">Register</a></div></div></div></div></div> '; 
+        str += '<div class="carousel-item"><div class="row justify-content-center"><div class="row w-75 mycard"><img src="./events/' + eventarr[i] + '.png" id="rounded" class="col d-block" alt="Server Unable to load the image"><div class="col text-center card_text"><h4>' + eventarr[i] + '</h4><p>' + event_about[eventarr[i]] + '</p><div class="register-button"><a href="register.php">Register</a></div></div></div></div></div> '; 
     };
     return str;
     // <div class="carousel-item active">
@@ -31,7 +31,7 @@ function filleventcards(eventarr){
     //                 <h4>Event Name</h4>
     //                 <p>something about event</p>
     //                 <div class='register-button'>
-    //                      <a href='register.html'></a>
+    //                      <a href='register.php'></a>
     //                 </div>
     //             </div>
     //         </div>
