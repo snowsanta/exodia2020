@@ -28,6 +28,9 @@ session_start();
         <img id="cloud2" src="renders/float.png" alt="">
     </div>
     <script>
+        document.location = "corona_has_delayed_the_fest.html";
+    </script>
+    <script>
         if (screen.width <= 700) {
             var x = document.getElementById('preloader');
             x.remove();
