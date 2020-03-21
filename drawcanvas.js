@@ -361,7 +361,13 @@ function getdatetime(msec = -1) {
 
     var today = new Date();
 
+
+    // *******************************************************************************************************************
     var date2 = new Date("2020-04-04T08:00:00");
+    // *******************************************************************************************************************
+
+
+
     if (msec === -1){msec = date2 - today};
     var sec = Math.floor(msec / 1000);
     var mins = Math.floor(msec / 60000);
@@ -396,26 +402,34 @@ Animation_counter.prototype.update = function() {
 
     ctx.lineWidth = 5;
     ctx.strokeStyle = "white";
-    ctx.beginPath();
-    ctx.arc(width * .35, height * .615 , height *  0.07, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
+    // ctx.beginPath();
+    // ctx.arc(width * .35, height * .615 , height *  0.07, 0, 2 * Math.PI);
+    // ctx.fill();
+    // ctx.stroke();
+    // ctx.closePath();
     
-    ctx.beginPath();
-    ctx.arc(width * .45, height * .615 , height *  0.07, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
+    // ctx.beginPath();
+    // ctx.arc(width * .45, height * .615 , height *  0.07, 0, 2 * Math.PI);
+    // ctx.fill();
+    // ctx.stroke();
+    // ctx.closePath();
     
-    ctx.beginPath();
-    ctx.arc(width * .55, height * .615 , height *  0.07, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-    ctx.closePath();
+    // ctx.beginPath();
+    // ctx.arc(width * .55, height * .615 , height *  0.07, 0, 2 * Math.PI);
+    // ctx.fill();
+    // ctx.stroke();
+    // ctx.closePath();
     
+    // ctx.beginPath();
+    // ctx.arc(width * .65, height * .615 , height *  0.07, 0, 2 * Math.PI);
+    // ctx.fill();
+    // ctx.stroke();
+    // ctx.closePath();
+
+    ctx.roundedRect()
+
     ctx.beginPath();
-    ctx.arc(width * .65, height * .615 , height *  0.07, 0, 2 * Math.PI);
+    ctx.roundedRect(width * .35, height * .615 - height *  0.07, width * .65 + height *  0.07 - width * .35, 2* height *  0.07, 15);
     ctx.fill();
     ctx.stroke();
     ctx.closePath();
@@ -423,19 +437,22 @@ Animation_counter.prototype.update = function() {
 
     ctx.fillStyle = "white";
     ctx.font = (height * .04).toString() + "px Ariel";
-    ctx.fillText((this.date.days).toString().padStart(2,0), width * .35, height * .605);
-    ctx.fillText((this.date.hours).toString().padStart(2,0), width * .45, height * .605);
-    ctx.fillText((this.date.min).toString().padStart(2,0), width * .55, height * .605);
-    ctx.fillText((this.date.sec).toString().padStart(2,0), width * .65, height * .605);
+    ctx.fillText("Date to be announced", width * .52, height * .605);
+    // ctx.fillText((this.date.days).toString().padStart(2,0), width * .35, height * .605);
+    // ctx.fillText((this.date.hours).toString().padStart(2,0), width * .45, height * .605);
+    // ctx.fillText((this.date.min).toString().padStart(2,0), width * .55, height * .605);
+    // ctx.fillText((this.date.sec).toString().padStart(2,0), width * .65, height * .605);
     
     
     
     ctx.textAlign = "center";
-    ctx.font = (height * .04).toString() + "px QuickKiss";
-    ctx.fillText("Days", width * .35, height * .645);
-    ctx.fillText("Hours", width * .45, height * .645);
-    ctx.fillText("Mins", width * .55, height * .645);
-    ctx.fillText("Secs", width * .65, height * .645);
+    // ctx.font = (height * .04).toString() + "px QuickKiss";
+    ctx.font = (height * .03).toString() + "px QuickKiss";
+    ctx.fillText("Postponed due to you know what pandemic 🤫", width * .52, height * .65);
+    // ctx.fillText("Days", width * .35, height * .645);
+    // ctx.fillText("Hours", width * .45, height * .645);
+    // ctx.fillText("Mins", width * .55, height * .645);
+    // ctx.fillText("Secs", width * .65, height * .645);
     
     this.date = getdatetime(this.date.raw - 1000);
     
